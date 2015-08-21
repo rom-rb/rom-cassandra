@@ -9,11 +9,18 @@ module ROM::Cassandra
   #
   class Session
 
+    # @!attribute [r] uri
+    #
+    # @return [Hash] the settings for the session
+    #
+    attr_reader :uri
+
     # Initializes a session to given cluster
     #
     # @param [Hash] uri
     #
     def initialize(uri)
+      @uri  = uri
       @conn = ::Cassandra.cluster(uri).connect
     end
 

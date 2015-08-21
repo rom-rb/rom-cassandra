@@ -15,6 +15,12 @@ describe ROM::Cassandra::Session do
     end
   end
 
+  describe "#uri" do
+    subject { session.uri }
+
+    it { is_expected.to eql uri }
+  end # describe #uri
+
   describe "#call" do
     subject { session.call(query) }
 
