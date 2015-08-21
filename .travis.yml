@@ -1,0 +1,27 @@
+---
+language:      ruby
+sudo:          false
+cache:         bundler
+bundler_args:  --without metrics
+before_script: service cassandra status
+script:        bundle exec rake test:coverage:run
+services:
+  - cassandra
+env:
+  global:
+    - JRUBY_OPTS="-Xcli.debug=true --debug"
+rvm:
+  - '1.9.3'
+  - '2.0'
+  - '2.1'
+  - '2.2'
+  - ruby-head
+  - rbx-2
+  - jruby-1.7-19mode
+  - jruby-1.7-21mode
+  - jruby-9.0.0.0
+  - jruby-head
+matrix:
+  allow_failures:
+    - rvm: ruby-head
+    - rvm: jruby-head
