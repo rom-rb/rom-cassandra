@@ -10,6 +10,7 @@ module ROM::Cassandra
 
     require_relative "commands/executor"
     require_relative "commands/create"
+    require_relative "commands/update"
 
   end # module Commands
 
