@@ -22,6 +22,7 @@ module ROM
     require_relative "cassandra/dataset"
     require_relative "cassandra/gateway"
     require_relative "cassandra/relation"
+    require_relative "cassandra/commands"
 
   end # module Cassandra
 
