@@ -12,6 +12,7 @@ module ROM::Cassandra
     require_relative "commands/create"
     require_relative "commands/update"
     require_relative "commands/delete"
+    require_relative "commands/batch"
 
   end # module Commands
 
