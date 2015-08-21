@@ -16,6 +16,8 @@ module ROM
   #
   module Cassandra
 
+    require_relative "cassandra/session"
+
   end # module Cassandra
 
   register_adapter(:cassandra, Cassandra)
