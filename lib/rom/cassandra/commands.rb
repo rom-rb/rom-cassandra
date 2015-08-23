@@ -8,6 +8,8 @@ module ROM::Cassandra
   #
   module Commands
 
+    require_relative "commands/executor"
+
   end # module Commands
 
 end # module ROM::Cassandra
