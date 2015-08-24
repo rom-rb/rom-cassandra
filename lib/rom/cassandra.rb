@@ -24,6 +24,8 @@ module ROM
     require_relative "cassandra/relation"
     require_relative "cassandra/commands"
 
+    require_relative "cassandra/migrations"
+
   end # module Cassandra
 
   register_adapter(:cassandra, Cassandra)
