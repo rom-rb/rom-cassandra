@@ -19,7 +19,7 @@ module ROM::Cassandra
 
     require_relative "migrations/logger"
     require_relative "migrations/migration"
-    require_relative "migrations/migrator"
+    require_relative "migrations/runner"
 
   end # module Migrations
 
