@@ -17,6 +17,8 @@ module ROM::Cassandra
     # The biggest possible version for migrations
     ALL_VERSIONS = ("9" * 14).to_i
 
+    require_relative "migrations/logger"
+
   end # module Migrations
 
 end # module ROM::Cassandra
