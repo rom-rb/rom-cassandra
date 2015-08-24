@@ -18,6 +18,8 @@ module ROM::Cassandra
     ALL_VERSIONS = ("9" * 14).to_i
 
     require_relative "migrations/logger"
+    require_relative "migrations/migration"
+    require_relative "migrations/migrator"
 
   end # module Migrations
 
