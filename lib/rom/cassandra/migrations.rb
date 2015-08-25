@@ -22,6 +22,7 @@ module ROM::Cassandra
     require_relative "migrations/runner"
     require_relative "migrations/runner_up"
     require_relative "migrations/runner_down"
+    require_relative "migrations/migrator"
 
   end # module Migrations
 
