@@ -28,6 +28,82 @@ describe ROM::Cassandra::Relation do
     end
   end # describe #dataset
 
+  describe "#insert_query" do
+    subject { relation.insert_query }
+
+    before { allow(source).to receive(:insert) { insert } }
+    let(:insert) { double :insert }
+
+    it "returns a relation" do
+      expect(subject).to be_kind_of described_class
+    end
+
+    it "preserves #source" do
+      expect(subject.source).to eql source
+    end
+
+    it "sets source.insert as a dataset" do
+      expect(subject.dataset).to eql insert
+    end
+  end # describe #insert_query
+
+  describe "#update_query" do
+    subject { relation.update_query }
+
+    before { allow(source).to receive(:update) { update } }
+    let(:update) { double :update }
+
+    it "returns a relation" do
+      expect(subject).to be_kind_of described_class
+    end
+
+    it "preserves #source" do
+      expect(subject.source).to eql source
+    end
+
+    it "sets source.update as a dataset" do
+      expect(subject.dataset).to eql update
+    end
+  end # describe #update_query
+
+  describe "#delete_query" do
+    subject { relation.delete_query }
+
+    before { allow(source).to receive(:delete) { delete } }
+    let(:delete) { double :delete }
+
+    it "returns a relation" do
+      expect(subject).to be_kind_of described_class
+    end
+
+    it "preserves #source" do
+      expect(subject.source).to eql source
+    end
+
+    it "sets source.delete as a dataset" do
+      expect(subject.dataset).to eql delete
+    end
+  end # describe #delete_query
+
+  describe "#batch_query" do
+    subject { relation.batch_query }
+
+    before { allow(source).to receive(:batch) { batch } }
+    let(:batch) { double :batch }
+
+    it "returns a relation" do
+      expect(subject).to be_kind_of described_class
+    end
+
+    it "preserves #source" do
+      expect(subject.source).to eql source
+    end
+
+    it "sets source.batch as a dataset" do
+      expect(subject.dataset).to eql batch
+    end
+  end # describe #batch_query
+
   describe "#respond_to?" do
     context "method, defined for #dataset" do
       subject { relation.respond_to? :foo }
@@ -54,12 +130,12 @@ describe ROM::Cassandra::Relation do
       expect(subject).to be_kind_of described_class
     end
 
-    it "updates a #dataset" do
-      expect(subject.dataset).to eql :updated_dataset
+    it "preserves #source" do
+      expect(subject.source).to eql source
     end
 
-    it "preserves a #source" do
-      expect(subject.source).to eql source
+    it "updates dataset" do
+      expect(subject.dataset).to eql :updated_dataset
     end
   end # describe #all
 

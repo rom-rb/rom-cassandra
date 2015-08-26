@@ -37,6 +37,38 @@ module ROM::Cassandra
       @dataset = dataset.get
     end
 
+    # Returns the relation whose source is restricted by `#insert` lazy query
+    #
+    # @return [ROM::Cassandra::Relation]
+    #
+    def insert_query
+      reload source.insert
+    end
+
+    # Returns the relation whose source is restricted by `#update` lazy query
+    #
+    # @return [ROM::Cassandra::Relation]
+    #
+    def update_query
+      reload source.update
+    end
+
+    # Returns the relation whose source is restricted by `#delete` lazy query
+    #
+    # @return [ROM::Cassandra::Relation]
+    #
+    def delete_query
+      reload source.delete
+    end
+
+    # Returns the relation whose source is restricted by `#delete` lazy query
+    #
+    # @return [ROM::Cassandra::Relation]
+    #
+    def batch_query
+      reload source.batch
+    end
+
     private
 
     def respond_to_missing?(name, *)
@@ -44,7 +76,11 @@ module ROM::Cassandra
     end
 
     def method_missing(name, *args)
-      Relation.new dataset.public_send(name, *args), source: source
+      reload dataset.public_send(name, *args)
+    end
+
+    def reload(dataset)
+      Relation.new dataset, source: source
     end
 
   end # class Relation
