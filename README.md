@@ -17,17 +17,12 @@
 
 [Apache Cassandra] support for [Ruby Object Mapper].
 
-Based on the official datastax [ruby driver] and [query_builder] CQL constructor.
+Based on the official datastax [ruby driver] and [query_builder] for CQL queries.
 
 [Apache Cassandra]: http://www.planetcassandra.org/
 [Ruby Object Mapper]: https://rom-rb.org
 [ruby driver]: https://github.com/datastax/ruby-driver
 [query_builder]: https://github.com/nepalez/query_builder
-
-Synopsis
---------
-
-@todo
 
 Installation
 ------------
@@ -51,10 +46,15 @@ Or add it manually:
 gem install rom-cassandra
 ```
 
+Usage
+-----
+
+See the [corresponding Guide](http://rom-rb.org/guides/adapters/cassandra/) on rom-rb.org.
+
 Compatibility
 -------------
 
-Compatible to ROM 0.8+, Cassandra Query Language v3 (CQL3), Apache Cassandra 1.2+.
+Compatible to ROM 0.9.1+, Cassandra Query Language v3 (CQL3), Apache Cassandra 1.2+.
 
 Tested under rubies [compatible to MRI 1.9.3+](.travis.yml).
 
