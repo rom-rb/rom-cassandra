@@ -32,7 +32,7 @@ module ROM::Cassandra
       #
       def initialize(*)
         super
-        @relation = relation.delete_query if options[:initial]
+        @relation = relation.delete_query if options.fetch(:initial)
       end
 
     end # class Delete

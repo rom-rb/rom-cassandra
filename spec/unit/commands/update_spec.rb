@@ -49,4 +49,29 @@ describe ROM::Cassandra::Commands::Update do
     end
   end # describe #respond_to_missing?
 
+  describe "#execute" do
+    let(:updated) { double :updated, to_a: result }
+    let(:result)  { double :result }
+
+    context "without a block" do
+      subject { command.execute(1) }
+
+      it "applies #to_a" do
+        allow(command).to receive(:to_a) { result }
+
+        expect(subject).to eql(result)
+      end
+    end
+
+    context "with a block" do
+      subject { command.execute { foo } }
+
+      it "updates and finalizes the command" do
+        allow(command).to receive(:foo) { updated }
+
+        expect(subject).to eql(result)
+      end
+    end
+  end # describe #execute
+
 end # describe ROM::Cassandra::Commands::Update

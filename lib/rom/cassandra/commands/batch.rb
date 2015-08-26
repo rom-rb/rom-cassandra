@@ -35,7 +35,7 @@ module ROM::Cassandra
       #
       def initialize(*)
         super
-        @relation = relation.batch_query if options[:initial]
+        @relation = relation.batch_query if options.fetch(:initial)
       end
 
       # Returns the keyspace context for lazy queries.

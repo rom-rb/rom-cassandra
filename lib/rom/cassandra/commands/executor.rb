@@ -23,7 +23,7 @@ module ROM::Cassandra
 
       def method_missing(name, *args)
         updated_relation = relation.public_send(name, *args)
-        self.class.new updated_relation, initial: false
+        self.class.new updated_relation, initial: nil
       end
 
       def respond_to_missing?(name, *)
