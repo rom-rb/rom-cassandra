@@ -5,10 +5,21 @@ describe ROM::Cassandra::Gateway do
   let(:gateway) { described_class.new(uri) }
   let(:uri)     { { hosts: ["127.0.0.1"], port: 9042 } }
 
+  describe ".new" do
+    after { described_class.new("127.0.0.2", port: 9042) }
+
+    let(:session_class) { ROM::Cassandra::Session }
+
+    it "creates the session with uri" do
+      allow(session_class).to receive(:new)
+      expect(session_class).to receive(:new).with("127.0.0.2", port: 9042)
+    end
+  end # describe .new
+
   describe "#options" do
     subject { gateway.options }
 
-    it "returns a session for uri" do
+    it "returns a uri" do
       expect(subject).to eql(uri)
     end
   end # describe #options
@@ -16,8 +27,11 @@ describe ROM::Cassandra::Gateway do
   describe "#session" do
     subject { gateway.session }
 
-    it "returns a session for uri" do
+    it "is a session" do
       expect(subject).to be_instance_of ROM::Cassandra::Session
+    end
+
+    it "has a proper uri" do
       expect(subject.uri).to eql uri
     end
   end # describe #session

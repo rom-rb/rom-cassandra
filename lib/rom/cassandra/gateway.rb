@@ -10,12 +10,6 @@ module ROM::Cassandra
 
     include Equalizer.new(:options, :datasets)
 
-    # @!attribute [r] options
-    #
-    # @return [Hash] The options of the session
-    #
-    attr_reader :options
-
     # @!attribute [r] session
     #
     # @return [ROM::Cassandra::Session] The current session
@@ -38,12 +32,26 @@ module ROM::Cassandra
     #     password: "foo"
     #   )
     #
+    # @example
+    #   ROM::Cassandra::Gateway.new(
+    #     "http://10.0.1.1:9042",
+    #     username: "admin",
+    #     password: "foo"
+    #   )
+    #
     # @param [Hash] options
     #
-    def initialize(options)
-      @options  = options
-      @session  = Session.new(options)
+    def initialize(*options)
+      @session  = Session.new(*options)
       @datasets = {}
+    end
+
+    # The options of the initialized session
+    #
+    # @return [Hash]
+    #
+    def options
+      session.uri
     end
 
     # Registers a new dataset

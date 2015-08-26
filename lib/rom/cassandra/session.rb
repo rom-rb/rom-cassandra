@@ -9,6 +9,9 @@ module ROM::Cassandra
   #
   class Session
 
+    # The regexp, describing the format of the allowed address of the cluster
+    FORMAT = /\d{1,3}(\.\d{1,3}){3}(\:\d+)?/
+
     # @!attribute [r] uri
     #
     # @return [Hash] the settings for the session
@@ -17,10 +20,10 @@ module ROM::Cassandra
 
     # Initializes a session to given cluster
     #
-    # @param [Hash] uri
+    # @param [Hash] options
     #
-    def initialize(uri)
-      @uri  = uri
+    def initialize(*options)
+      @uri  = extract(*options)
       @conn = ::Cassandra.cluster(uri).connect
     end
 
@@ -32,6 +35,14 @@ module ROM::Cassandra
     #
     def call(query)
       @conn.execute(query.to_s).to_a
+    end
+
+    private
+
+    def extract(uri = { hosts: ["127.0.0.1"], port: 9042 }, hash = {})
+      return uri if uri.instance_of? Hash
+      hosts, port = uri[FORMAT].split(":")
+      { hosts: [hosts], port: port.to_i }.merge hash
     end
 
   end # class Session

@@ -18,7 +18,27 @@ describe ROM::Cassandra::Session do
   describe "#uri" do
     subject { session.uri }
 
-    it { is_expected.to eql uri }
+    context "from hash" do
+      it { is_expected.to eql uri }
+    end
+
+    context "from nil" do
+      let(:session) { described_class.new }
+
+      it { is_expected.to eql uri }
+    end
+
+    context "from string" do
+      let(:session) { described_class.new "127.0.0.1:9042" }
+
+      it { is_expected.to eql uri }
+    end
+
+    context "from string and hash" do
+      let(:session) { described_class.new "127.0.0.1", port: 9042 }
+
+      it { is_expected.to eql uri }
+    end
   end # describe #uri
 
   describe "#call" do
