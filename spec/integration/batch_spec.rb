@@ -26,7 +26,7 @@ module ROM::Cassandra::Test # the namespace for newly created classes
 
     it "works" do
       expect { subject.call }
-        .to change { select.all.to_a }
+        .to change { select.to_a }
         .from([{ "id" => 1, "name" => "joe" }, { "id" => 2, "name" => "jane" }])
         .to [{ "id" => 2, "name" => "jane" }, { "id" => 3, "name" => "frank" }]
     end

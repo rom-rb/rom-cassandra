@@ -20,24 +20,31 @@ module ROM::Cassandra
   class Relation < ROM::Relation
 
     adapter :cassandra
+    option  :source
 
-    # Selects all records from the dataset
+    # @!attribute [r] source
     #
     # @return [ROM::Cassandra::Dataset]
-    #   The dataset with a query prepared for SELECT requests
+    #   The source dataset before `get` method has been applied
     #
-    def all
-      dataset.get
+    attr_reader :source
+
+    # @private
+    def initialize(*)
+      super
+      return if (@source = options[:source])
+      @source  = dataset
+      @dataset = dataset.get
     end
 
     private
 
     def respond_to_missing?(name, *)
-      all.respond_to? name
+      dataset.respond_to? name
     end
 
-    def method_missing(*args)
-      all.public_send(*args)
+    def method_missing(name, *args)
+      Relation.new dataset.public_send(name, *args), source: source
     end
 
   end # class Relation

@@ -3,7 +3,7 @@
 describe ROM::Cassandra::Commands::Batch do
 
   let(:command)  { described_class.new relation }
-  let(:relation) { double :relation, dataset: dataset }
+  let(:relation) { double :relation, source: dataset }
   let(:dataset)  { double :dataset, batch: query, keyspace: keyspace }
   let(:query)    { double :query, add: nil }
   let(:keyspace) { :foo }
@@ -17,7 +17,7 @@ describe ROM::Cassandra::Commands::Batch do
   describe "#dataset" do
     subject { command.dataset }
 
-    it "returns the dataset of the #relation" do
+    it "returns the source of the #relation" do
       expect(subject).to eql dataset
     end
   end # describe #dataset

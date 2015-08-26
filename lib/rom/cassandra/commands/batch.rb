@@ -45,7 +45,7 @@ module ROM::Cassandra
       # @private
       def initialize(*)
         super
-        @dataset = relation.dataset
+        @dataset = relation.source
         @query   = dataset.batch
       end
 

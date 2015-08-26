@@ -10,8 +10,8 @@ describe ROM::Cassandra::Commands::Executor do
   describe "#dataset" do
     subject { object.dataset }
 
-    it "returns the relation's dataset" do
-      allow(object).to receive(:relation) { double dataset: :foo }
+    it "returns the #relation's #source" do
+      allow(object).to receive(:relation) { double source: :foo }
 
       expect(subject).to eql(:foo)
     end

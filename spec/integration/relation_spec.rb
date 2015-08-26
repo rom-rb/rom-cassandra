@@ -11,7 +11,7 @@ module ROM::Cassandra::Test # the namespace for newly created classes
     let(:subject) { rom.relation(:users) }
 
     it "works" do
-      expect(subject.all.to_a).to eql [
+      expect(subject.to_a).to eql [
         { "id" => 1, "name" => "joe" },
         { "id" => 2, "name" => "jane" }
       ]

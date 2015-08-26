@@ -3,7 +3,7 @@
 describe ROM::Cassandra::Commands::Update do
 
   let(:command)  { described_class.new relation }
-  let(:relation) { double :relation, dataset: dataset }
+  let(:relation) { double :relation, source: dataset }
   let(:dataset)  { double :dataset, update: update }
   let(:update)   { double :update }
 

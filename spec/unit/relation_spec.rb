@@ -2,9 +2,9 @@
 
 describe ROM::Cassandra::Relation do
 
-  let(:relation) { described_class.new dataset }
-  let(:dataset)  { double :dataset, get: query }
-  let(:query)    { double :query, foo: :foo }
+  let(:relation) { described_class.new source }
+  let(:source)   { double :source, get: dataset }
+  let(:dataset)  { double :dataset, foo: :updated_dataset }
 
   describe ".new" do
     subject { relation }
@@ -12,22 +12,30 @@ describe ROM::Cassandra::Relation do
     it { is_expected.to be_kind_of ROM::Relation }
   end # describe .new
 
-  describe "#all" do
-    subject { relation.all }
+  describe "#source" do
+    subject { relation.source }
 
-    it "forwards to dataset#get" do
-      expect(subject).to eql query
+    it "stores the source dataset" do
+      expect(subject).to eql source
     end
-  end # describe #all
+  end # describe #source
+
+  describe "#dataset" do
+    subject { relation.dataset }
+
+    it "applies #get to the source dataset" do
+      expect(subject).to eql dataset
+    end
+  end # describe #dataset
 
   describe "#respond_to?" do
-    context "method, defined for #all query" do
+    context "method, defined for #dataset" do
       subject { relation.respond_to? :foo }
 
       it { is_expected.to eql true }
     end
 
-    context "method, not defined for #all query" do
+    context "method, not defined for #dataset" do
       subject { relation.respond_to? :bar }
 
       it { is_expected.to eql false }
@@ -37,9 +45,21 @@ describe ROM::Cassandra::Relation do
   describe "#method_missing" do
     subject { relation.foo :bar }
 
-    it "sends method to #all" do
-      expect(query).to receive(:foo).with(:bar)
+    it "forwards call to #dataset" do
+      expect(dataset).to receive(:foo).with(:bar)
       subject
+    end
+
+    it "returns a relation" do
+      expect(subject).to be_kind_of described_class
+    end
+
+    it "updates a #dataset" do
+      expect(subject.dataset).to eql :updated_dataset
+    end
+
+    it "preserves a #source" do
+      expect(subject.source).to eql source
     end
   end # describe #all
 

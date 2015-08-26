@@ -21,7 +21,7 @@ module ROM::Cassandra
       # @return [ROM::Cassandra::Dataset] The dataset of the relation
       #
       def dataset
-        relation.dataset
+        relation.source
       end
 
       # Implements the execute method of the `ROM::Command` abstract class

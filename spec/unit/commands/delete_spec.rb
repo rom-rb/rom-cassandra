@@ -3,7 +3,7 @@
 describe ROM::Cassandra::Commands::Delete do
 
   let(:command)  { described_class.new relation }
-  let(:relation) { double :relation, dataset: dataset }
+  let(:relation) { double :relation, source: dataset }
   let(:dataset)  { double :dataset, delete: delete }
   let(:delete)   { double :delete }
 
