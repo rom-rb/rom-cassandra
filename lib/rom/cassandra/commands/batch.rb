@@ -12,12 +12,11 @@ module ROM::Cassandra
     #     register_as :batch
     #
     #     def execute
-    #       super do
-    #         [
-    #           keyspace(:domain).table(:items).delete.where(id: 1),
-    #           keyspace(:logs).table(:items).insert(text: "deleted")
-    #         ]
-    #       end
+    #       super {
+    #         self
+    #           .add(keyspace(:domain).table(:items).delete.where(id: 1))
+    #           .add("INSERT INTO logs.items (id, text) VALUES (1, 'deleted');")
+    #       }
     #     end
     #   end
     #
@@ -27,26 +26,16 @@ module ROM::Cassandra
     #
     class Batch < ROM::Command
 
+      include Executor
+
       adapter :cassandra
+      option  :initial, default: true
 
-      # @!attribute [r] dataset
+      # Restricts the query by BATCH request
       #
-      # @return [ROM::Cassandra::Dataset] The dataset of the command's relation
-      #
-      attr_reader :dataset
-
-      # @!attribute [r] query
-      #
-      # @return [ROM::Cassandra:Dataset]
-      #   The [#dataset] restricted by BATCH queries
-      #
-      attr_reader :query
-
-      # @private
       def initialize(*)
         super
-        @dataset = relation.source
-        @query   = dataset.batch
+        @relation = relation.batch_query if options[:initial]
       end
 
       # Returns the keyspace context for lazy queries.
@@ -60,18 +49,6 @@ module ROM::Cassandra
       #
       def keyspace(name)
         Query.new.keyspace(name)
-      end
-
-      # Executes the batch [#query]. Before execution yields the block,
-      # that returns an array of commands, and adds it to the batch.
-      #
-      # @param [#to_s, Array<#to_s>] commands The batch content
-      #
-      # @return [Array]
-      #   An empty array `[]` (Cassandra does't read data while writing)
-      #
-      def execute(*commands)
-        commands.inject(query, :add).to_a
       end
 
     end # class Create

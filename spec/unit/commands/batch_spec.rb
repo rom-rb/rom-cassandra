@@ -3,10 +3,8 @@
 describe ROM::Cassandra::Commands::Batch do
 
   let(:command)  { described_class.new relation }
-  let(:relation) { double :relation, source: dataset }
-  let(:dataset)  { double :dataset, batch: query, keyspace: keyspace }
-  let(:query)    { double :query, add: nil }
-  let(:keyspace) { :foo }
+  let(:relation) { double :relation, batch_query: batch }
+  let(:batch)    { double :batch, foo: :updated_relation }
 
   describe ".new" do
     subject { command }
@@ -14,43 +12,41 @@ describe ROM::Cassandra::Commands::Batch do
     it { is_expected.to be_kind_of ROM::Command }
   end # describe .new
 
-  describe "#dataset" do
-    subject { command.dataset }
+  describe "#relation" do
+    subject { command.relation }
 
-    it "returns the source of the #relation" do
-      expect(subject).to eql dataset
+    it "restricts dataset by UPDATE statements" do
+      expect(subject).to eql batch
     end
-  end # describe #dataset
+  end # describe #relation
 
-  describe "#query" do
-    subject { command.query }
+  describe "#method_missing" do
+    subject { command.foo :bar }
 
-    it "returns the batch query of the #dataset" do
-      expect(subject).to eql query
+    it "returns a command" do
+      expect(subject).to be_kind_of described_class
     end
-  end # describe #query
 
-  describe "#keyspace" do
-    subject { command.keyspace(:foo).table(:bar).select.to_s }
-
-    it "returns the keyspace query" do
-      expect(subject).to eql "SELECT * FROM foo.bar;"
+    it "updates the relation" do
+      expect(batch).to receive(:foo).with(:bar)
+      expect(subject.relation).to eql :updated_relation
     end
-  end # describe #query
+  end # describe #method_missing
 
-  describe "#execute" do
-    subject(:execute) { command.execute(:foo, :bar) }
+  describe "#respond_to_missing?" do
+    subject { command.respond_to? name }
 
-    it "updates and executes the query" do
-      result = double
-      bar = double(:bar, to_a: result)
-      foo = double(:foo, add: bar)
-      allow(query).to receive(:add) { foo }
+    context "method of #relation" do
+      let(:name) { :foo }
 
-      expect(query).to receive(:add).with(:foo)
-      expect(foo).to receive(:add).with(:bar)
-      expect(subject).to eql result
+      it { is_expected.to eql true }
     end
-  end # describe #execute
 
-end # describe ROM::Cassandra::Commands::Create
+    context "method not defined for #relation" do
+      let(:name) { :bar }
+
+      it { is_expected.to eql false }
+    end
+  end # describe #respond_to_missing?
+
+end # describe ROM::Cassandra::Commands::Batch

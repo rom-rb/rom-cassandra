@@ -26,12 +26,13 @@ module ROM::Cassandra
       include Executor # defines the `queries` and `execute` methods
 
       adapter :cassandra
+      option  :initial, default: true
 
       # Restricts the query by UPDATE request
       #
       def initialize(*)
         super
-        @query = dataset.update
+        @relation = relation.update_query if options[:initial]
       end
 
     end # class Create

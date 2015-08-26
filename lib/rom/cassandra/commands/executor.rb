@@ -8,32 +8,26 @@ module ROM::Cassandra
     #
     module Executor
 
-      # @!attribute [r] query
-      #
-      # @return [ROM::Cassandra::Dataset]
-      #   The dataset carried by the command, prepared for a specific type
-      #   (INSERT, UPDATE, DELETE) of statements.
-      #
-      attr_reader :query
-
-      # @!attribute [r] dataset
-      #
-      # @return [ROM::Cassandra::Dataset] The dataset of the relation
-      #
-      def dataset
-        relation.source
-      end
-
       # Implements the execute method of the `ROM::Command` abstract class
       #
-      # @yield the block in the scope of the [#query] to specify the statement.
+      # @yield the block to specify the statement.
       #
       # @return [Array]
       #   The empty array (Cassandra doesn't select rows when writes data).
       #
       def execute(*, &block)
-        updated = block_given? ? query.instance_eval(&block) : query
-        updated.to_a
+        (block_given? ? instance_eval(&block) : self).to_a
+      end
+
+      private
+
+      def method_missing(name, *args)
+        updated_relation = relation.public_send(name, *args)
+        self.class.new updated_relation, initial: false
+      end
+
+      def respond_to_missing?(name, *)
+        relation.respond_to? name
       end
 
     end # module Executor

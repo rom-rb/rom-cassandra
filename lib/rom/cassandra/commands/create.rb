@@ -23,15 +23,16 @@ module ROM::Cassandra
     #
     class Create < ROM::Commands::Create
 
-      include Executor # defines the `queries` and `execute` methods
+      include Executor
 
       adapter :cassandra
+      option  :initial, default: true
 
       # Restricts the query by INSERT request
       #
       def initialize(*)
         super
-        @query = dataset.insert
+        @relation = relation.insert_query if options[:initial]
       end
 
     end # class Create
