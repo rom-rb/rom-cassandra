@@ -16,7 +16,6 @@ rvm:
   - '2.1'
   - '2.2'
   - ruby-head
-  - rbx-2
   - jruby-1.7-19mode
   - jruby-1.7-21mode
   - jruby-9.0.0.0

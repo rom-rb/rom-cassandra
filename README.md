@@ -56,7 +56,7 @@ Compatibility
 
 Compatible to ROM 0.9.1+, Cassandra Query Language v3 (CQL3), Apache Cassandra 1.2+.
 
-Tested under rubies [compatible to MRI 1.9.3+](.travis.yml).
+Tested under [MRI and JRuby compatible to 1.9.3+](.travis.yml).
 
 Uses [RSpec] 3.0+ for testing and [hexx-suit] for dev/test tools collection.
 

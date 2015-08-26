@@ -134,4 +134,5 @@ describe ROM::Cassandra::Migrations::Migrator do
     end
   end # describe #apply
 
-end # describe ROM::Cassandra::Migrations::Migrator
+end unless RUBY_ENGINE == "rbx" # fakefs doesn't work well under Rubinius
+# @see https://github.com/defunkt/fakefs/issues/87#issuecomment-2483385
