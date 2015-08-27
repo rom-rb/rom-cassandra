@@ -1,1 +1,3 @@
-## v0.0.1 to-be-released
+## v0.0.1 2015-08-27
+
+First public release
