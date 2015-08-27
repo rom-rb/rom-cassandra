@@ -15,7 +15,7 @@ rescue LoadError
   Hexx::RSpec.install_tasks
 end
 
-# Sets the Hexx::RSpec :test task to default
+desc "Runs specs and check coverage"
 task :default do
   system "bundle exec rake test:coverage:run"
 end
