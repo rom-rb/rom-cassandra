@@ -53,7 +53,7 @@ module ROM::Cassandra
       #
       # Can specify logger and path as well.
       #
-      # @option options [ROM::Cassandra::Session] :session
+      # @param [ROM::Cassandra::Session] session
       # @option options [::Logger] :logger
       # @option options [String] :path
       #

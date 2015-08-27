@@ -87,6 +87,20 @@ module ROM::Cassandra
       self[name] ? true : false
     end
 
+    # Migrates the Cassandra cluster to given version
+    #
+    # @option (see ROM::Cassandra::Migrations::Migrator#new)
+    # @option options [Integer, nil] :version
+    #
+    # @return [undefined]
+    #
+    def migrate(options = {})
+      settings = options.select { |key| [:path, :logger].include? key }
+      target   = options.select { |key| key.equal? :version }
+
+      Migrations::Migrator.new(session, settings).apply(target)
+    end
+
     private
 
     def split(name)

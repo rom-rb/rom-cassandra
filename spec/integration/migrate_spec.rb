@@ -7,35 +7,33 @@ describe "migrate" do
     Cassandra.cluster.connect.execute query
   end
 
-  let(:logger) { Logger.new stdout }
-  let(:path)   { File.expand_path("../migrate", __FILE__) }
-
-  # @change this 4 lines to ROM setup
-  let(:klass)    { ROM::Cassandra::Migrations::Migrator }
-  let(:session)  { ROM::Cassandra::Session.new "127.0.0.1:9042" }
-  let(:stdout)   { StringIO.new }
-  let(:migrator) { klass.new session, path: path, logger: logger }
+  let(:stdout)  { StringIO.new }
+  let(:logger)  { Logger.new stdout }
+  let(:path)    { File.expand_path("../migrate", __FILE__) }
+  let(:gateway) { ROM.finalize.env.gateways[:default] }
 
   it "works" do
+    ROM.setup(:cassandra, "127.0.0.1:9042")
+
     expect { check "SELECT * FROM logs.users;" }.to raise_error StandardError
     expect { check "SELECT * FROM logs.logs" }.to raise_error StandardError
     expect(stdout.string).to be_empty
 
-    migrator.apply version: 20150825142003
+    gateway.migrate logger: logger, path: path, version: 20150825142003
 
     expect { check "SELECT * FROM logs.users;" }.not_to raise_error
     expect { check "SELECT * FROM logs.logs" }.to raise_error StandardError
     expect(stdout.string).to     include "Apply migration 20150825142003"
     expect(stdout.string).not_to include "Apply migration 20150825142024"
 
-    migrator.apply
+    gateway.migrate logger: logger, path: path
 
     expect { check "SELECT * FROM logs.users;" }.not_to raise_error
     expect { check "SELECT * FROM logs.logs" }.not_to raise_error
     expect(stdout.string).to     include "Apply migration 20150825142024"
     expect(stdout.string).not_to include "Roll back"
 
-    migrator.apply version: 0
+    gateway.migrate logger: logger, path: path, version: 0
 
     expect { check "SELECT * FROM logs.users;" }.to raise_error StandardError
     expect { check "SELECT * FROM logs.logs" }.to raise_error StandardError
