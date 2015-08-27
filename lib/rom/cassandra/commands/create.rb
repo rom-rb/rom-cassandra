@@ -25,9 +25,6 @@ module ROM::Cassandra
 
       include Commands
 
-      adapter :cassandra
-      option  :initial, default: true
-
       private
 
       def restriction

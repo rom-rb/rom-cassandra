@@ -28,9 +28,6 @@ module ROM::Cassandra
 
       include Commands
 
-      adapter :cassandra
-      option  :initial, default: true
-
       # Returns the keyspace context for lazy queries.
       #
       # The method can be used within a block of [#execute] to prepare
