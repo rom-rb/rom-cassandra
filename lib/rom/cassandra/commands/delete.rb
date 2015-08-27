@@ -23,16 +23,15 @@ module ROM::Cassandra
     #
     class Delete < ROM::Commands::Delete
 
-      include Executor # defines the `queries` and `execute` methods
+      include Commands
 
       adapter :cassandra
       option  :initial, default: true
 
-      # Restricts the query by DELETE request
-      #
-      def initialize(*)
-        super
-        @relation = relation.delete_query if options.fetch(:initial)
+      private
+
+      def restriction
+        :delete_query
       end
 
     end # class Delete

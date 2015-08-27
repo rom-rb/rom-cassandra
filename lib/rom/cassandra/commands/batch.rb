@@ -26,17 +26,10 @@ module ROM::Cassandra
     #
     class Batch < ROM::Command
 
-      include Executor
+      include Commands
 
       adapter :cassandra
       option  :initial, default: true
-
-      # Restricts the query by BATCH request
-      #
-      def initialize(*)
-        super
-        @relation = relation.batch_query if options.fetch(:initial)
-      end
 
       # Returns the keyspace context for lazy queries.
       #
@@ -49,6 +42,12 @@ module ROM::Cassandra
       #
       def keyspace(name)
         Query.new.keyspace(name)
+      end
+
+      private
+
+      def restriction
+        :batch_query
       end
 
     end # class Create

@@ -23,16 +23,15 @@ module ROM::Cassandra
     #
     class Update < ROM::Commands::Update
 
-      include Executor # defines the `queries` and `execute` methods
+      include Commands
 
       adapter :cassandra
       option  :initial, default: true
 
-      # Restricts the query by UPDATE request
-      #
-      def initialize(*)
-        super
-        @relation = relation.update_query if options.fetch(:initial)
+      private
+
+      def restriction
+        :update_query
       end
 
     end # class Create
