@@ -1,5 +1,5 @@
-[WIP] ROM::Cassandra
-====================
+ROM::Cassandra
+==============
 
 [![Gem Version](https://img.shields.io/gem/v/rom-cassandra.svg?style=flat)][gem]
 [![Build Status](https://img.shields.io/travis/rom-rb/rom-cassandra/master.svg?style=flat)][travis]
@@ -8,21 +8,26 @@
 [![Coverage](https://img.shields.io/coveralls/rom-rb/rom-cassandra.svg?style=flat)][coveralls]
 [![Inline docs](http://inch-ci.org/github/rom-rb/rom-cassandra.svg)][inch]
 
+[builder]: https://github.com/nepalez/query_builder
+[cassandra]: http://www.planetcassandra.org/
 [codeclimate]: https://codeclimate.com/github/rom-rb/rom-cassandra
 [coveralls]: https://coveralls.io/r/rom-rb/rom-cassandra
+[driver]: https://github.com/datastax/ruby-driver
 [gem]: https://rubygems.org/gems/rom-cassandra
 [gemnasium]: https://gemnasium.com/rom-rb/rom-cassandra
-[travis]: https://travis-ci.org/rom-rb/rom-cassandra
+[github]: https://github.com/rom-rb/rom-cassandra
+[guide]: http://rom-rb.org/guides/adapters/cassandra/
+[hexx-suit]: https://github.com/nepalez/hexx-suit
 [inch]: https://inch-ci.org/github/rom-rb/rom-cassandra
+[license]: LICENSE
+[rom]: https://rom-rb.org
+[rspec]: http://rspec.org
+[travis]: https://travis-ci.org/rom-rb/rom-cassandra
+[versions]: .travis.yml
 
-[Apache Cassandra] support for [Ruby Object Mapper].
+[Apache Cassandra][cassandra] support for [Ruby Object Mapper][rom].
 
-Based on the official datastax [ruby driver] and [query_builder] for CQL queries.
-
-[Apache Cassandra]: http://www.planetcassandra.org/
-[Ruby Object Mapper]: https://rom-rb.org
-[ruby driver]: https://github.com/datastax/ruby-driver
-[query_builder]: https://github.com/nepalez/query_builder
+Based on the official datastax [ruby driver][driver] and [CQL query builder][builder].
 
 Installation
 ------------
@@ -49,24 +54,21 @@ gem install rom-cassandra
 Usage
 -----
 
-See the [corresponding Guide](http://rom-rb.org/guides/adapters/cassandra/) on rom-rb.org.
+See the [corresponding Guide][guide] on rom-rb.org.
 
 Compatibility
 -------------
 
 Compatible to ROM 0.9.1+, Cassandra Query Language v3 (CQL3), Apache Cassandra 1.2+.
 
-Tested under [MRI and JRuby compatible to 1.9.3+](.travis.yml).
+Tested under [MRI and JRuby compatible to 1.9.3+][versions].
 
-Uses [RSpec] 3.0+ for testing and [hexx-suit] for dev/test tools collection.
-
-[RSpec]: http://rspec.org
-[hexx-suit]: https://github.com/nepalez/hexx-suit
+Uses [RSpec][rspec] 3.0+ for testing and [hexx-suit][hexx-suit] for dev/test tools collection.
 
 Contributing
 ------------
 
-* [Fork the project](https://github.com/rom-rb/rom-cassandra)
+* [Fork the project][github]
 * Create your feature branch (`git checkout -b my-new-feature`)
 * Add tests for it
 * Run `rubocop` and `inch --pedantic` to ensure the style and inline docs are ok
@@ -78,4 +80,4 @@ Contributing
 License
 -------
 
-See the [MIT LICENSE](LICENSE).
+See the [MIT LICENSE][license].
