@@ -63,7 +63,7 @@ module ROM::Cassandra
         @session = session
         @logger  = options.fetch(:logger) { Logger.new }
         @root    = options.fetch(:path) { DEFAULT_PATH }
-        @paths   = Dir[File.join(root, "*.rb")]
+        @paths   = Dir[File.join(root, "*.rb")].sort
       end
 
       # Migrates the Cassandra cluster to selected version

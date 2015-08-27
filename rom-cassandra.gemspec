@@ -29,6 +29,6 @@ Gem::Specification.new do |gem|
 
   gem.add_development_dependency "hexx-rspec", "~> 0.5"
   gem.add_development_dependency "inflecto", "~> 0.0"
-  gem.add_development_dependency "fakefs", "~> 0.6"
+  gem.add_development_dependency "timecop", "~> 0.8"
 
 end # Gem::Specification
