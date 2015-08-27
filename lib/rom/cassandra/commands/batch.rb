@@ -34,7 +34,7 @@ module ROM::Cassandra
       # Returns the keyspace context for lazy queries.
       #
       # The method can be used within a block of [#execute] to prepare
-      # array of commands for the batch.
+      # commands for adding to the batch.
       #
       # @param [#to_s] name The name of the keyspace
       #

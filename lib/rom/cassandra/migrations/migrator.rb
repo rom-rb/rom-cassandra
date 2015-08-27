@@ -53,16 +53,16 @@ module ROM::Cassandra
       #
       # Can specify logger and path as well.
       #
-      # @param [Hash] options
+      # @option options [ROM::Cassandra::Session] :session
       # @option options [::Logger] :logger
       # @option options [String] :path
       #
       # See [ROM::Cassandra::Session] for other avaliable options for URI
       #
-      def initialize(options)
-        @root    = options.fetch(:path) { DEFAULT_PATH }
-        @session = connect(options)
+      def initialize(session, options = {})
+        @session = session
         @logger  = options.fetch(:logger) { Logger.new }
+        @root    = options.fetch(:path) { DEFAULT_PATH }
         @paths   = Dir[File.join(root, "*.rb")]
       end
 
@@ -83,11 +83,6 @@ module ROM::Cassandra
       end
 
       private
-
-      def connect(hash)
-        uri = hash.reject { |key| [:logger, :path].include? key }
-        Session.new(uri)
-      end
 
       def migrate_to(version)
         paths

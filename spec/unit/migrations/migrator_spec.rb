@@ -1,36 +1,19 @@
 # encoding: utf-8
 
-describe ROM::Cassandra::Migrations::Migrator do
-  include FakeFS::SpecHelpers
+require "shared/fake_migrate_folder"
 
-  let(:migrator) { described_class.new uri.merge(logger: logger, path: path) }
+describe ROM::Cassandra::Migrations::Migrator do
+
+  include_context :fake_migrate_folder, "context"
+
+  let(:migrator) { described_class.new session, logger: logger, path: path }
   let(:logger)   { double :logger }
   let(:session)  { double :session, call: nil }
-  let(:uri)      { { hosts: ["127.0.0.1"], port: 9042 } }
-  let(:path)     { "custom" }
-  let(:files) do
-    [
-      "/custom/20151231235959_create_auth.rb",
-      "/custom/20160101000000_create_users.rb",
-      "/custom/20160101000001_create_logs.rb",
-      "/custom/20160101000002_create_rights.rb"
-    ]
-  end
-
-  before do
-    # Prepares the migrations directory
-    FileUtils.mkdir path
-    files.reverse_each(&FileUtils.method(:touch))
-
-    # Stubs session for not touching Cassandra
-    allow(ROM::Cassandra::Session).to receive(:new) { session }
-  end
 
   describe "#session" do
     subject { migrator.session }
 
     it "returns the session by uri" do
-      expect(ROM::Cassandra::Session).to receive(:new).with(uri)
       expect(subject).to eql(session)
     end
   end # describe #session
@@ -43,7 +26,7 @@ describe ROM::Cassandra::Migrations::Migrator do
     end
 
     context "when logger isn't specified" do
-      let(:migrator) { described_class.new uri }
+      let(:migrator) { described_class.new session }
 
       it { is_expected.to be_kind_of ROM::Cassandra::Migrations::Logger }
     end
@@ -57,7 +40,7 @@ describe ROM::Cassandra::Migrations::Migrator do
     end
 
     context "when path isn't specified" do
-      let(:migrator) { described_class.new uri }
+      let(:migrator) { described_class.new session }
 
       it { is_expected.to eql("db/migrate") }
     end
@@ -134,5 +117,4 @@ describe ROM::Cassandra::Migrations::Migrator do
     end
   end # describe #apply
 
-end unless RUBY_ENGINE == "rbx" # fakefs doesn't work well under Rubinius
-# @see https://github.com/defunkt/fakefs/issues/87#issuecomment-2483385
+end # describe ROM::Cassandra::Migrations::Migrator

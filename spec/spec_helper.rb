@@ -12,7 +12,6 @@ end
 require "rom-cassandra"
 
 # Configures RSpec
-require "fakefs/spec_helpers"
 require "config/reset_cluster"
 require "config/rom"
 require "config/test_module"

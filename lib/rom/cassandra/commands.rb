@@ -12,7 +12,7 @@ module ROM::Cassandra
     #
     def initialize(*)
       super
-      @relation = relation.__send__(restriction) if options.fetch(:initial)
+      @relation = relation.public_send(restriction) if options.fetch(:initial)
     end
 
     # Implements the execute method of the `ROM::Command` abstract class

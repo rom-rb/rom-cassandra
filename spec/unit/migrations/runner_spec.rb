@@ -110,8 +110,10 @@ describe ROM::Cassandra::Migrations::Runner do
 
     let(:queries) do
       [
-        "CREATE KEYSPACE IF NOT EXISTS rom WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 3};",
-        "CREATE TABLE IF NOT EXISTS rom.migrations (version text, PRIMARY KEY (version));",
+        "CREATE KEYSPACE IF NOT EXISTS rom WITH REPLICATION =" \
+          " {'class': 'SimpleStrategy', 'replication_factor': 3};",
+        "CREATE TABLE IF NOT EXISTS rom.migrations " \
+          "(version text, PRIMARY KEY (version));",
         "SELECT * FROM rom.migrations WHERE version = '20150824103059';"
       ]
     end
