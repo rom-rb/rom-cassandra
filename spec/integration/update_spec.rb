@@ -14,7 +14,7 @@ module ROM::Cassandra::Test # the namespace for newly created classes
         register_as :update
 
         def execute(id, name)
-          super { update(name: name).where(id: 1) }
+          super update(name: name).where(id: id)
         end
       end
     end

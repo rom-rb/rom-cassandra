@@ -14,10 +14,8 @@ module ROM::Cassandra::Test # the namespace for newly created classes
         register_as :batch
 
         def execute
-          super do
-            add("DELETE FROM auth.users WHERE id = 1;")
-              .add(keyspace(:auth).table(:users).insert(id: 3, name: "frank"))
-          end
+          super add("DELETE FROM auth.users WHERE id = 1;")
+            .add(keyspace(:auth).table(:users).insert(id: 3, name: "frank"))
         end
       end
     end

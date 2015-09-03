@@ -14,7 +14,7 @@ module ROM::Cassandra::Test # the namespace for newly created classes
         register_as :delete
 
         def execute(id)
-          super { where(id: 1) }
+          super where(id: id)
         end
       end
     end

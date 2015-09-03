@@ -23,13 +23,13 @@ module ROM::Cassandra
 
     # Implements the execute method of the `ROM::Command` abstract class
     #
-    # @yield the block to specify the statement.
+    # @param [ROM::Command] command The updated command
     #
     # @return [Array]
     #   The empty array (Cassandra doesn't select rows when writes data).
     #
-    def execute(*, &block)
-      (block_given? ? instance_eval(&block) : self).to_a
+    def execute(command = self)
+      command.to_a
     end
 
     private

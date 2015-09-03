@@ -14,7 +14,7 @@ module ROM::Cassandra::Test # the namespace for newly created classes
         register_as :create
 
         def execute(id, name)
-          super { insert(id: id, name: name) }
+          super insert(id: id, name: name)
         end
       end
     end

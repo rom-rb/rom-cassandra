@@ -53,8 +53,8 @@ describe ROM::Cassandra::Commands::Batch do
     let(:updated) { double :updated, to_a: result }
     let(:result)  { double :result }
 
-    context "without a block" do
-      subject { command.execute(1) }
+    context "without argument" do
+      subject { command.execute }
 
       it "applies #to_a" do
         allow(command).to receive(:to_a) { result }
@@ -63,12 +63,11 @@ describe ROM::Cassandra::Commands::Batch do
       end
     end
 
-    context "with a block" do
-      subject { command.execute { foo } }
+    context "with argument" do
+      subject { command.execute(updated) }
 
       it "updates and finalizes the command" do
-        allow(command).to receive(:foo) { updated }
-
+        expect(updated).to receive(:to_a)
         expect(subject).to eql(result)
       end
     end
