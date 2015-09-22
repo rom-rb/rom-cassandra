@@ -80,7 +80,7 @@ module ROM::Cassandra
     end
 
     def reload(dataset)
-      Relation.new dataset, source: source
+      __new__ dataset, source: source
     end
 
   end # class Relation
