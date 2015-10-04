@@ -11,7 +11,7 @@ module ROM::Cassandra
     # @private
     def self.included(klass)
       klass.__send__ :adapter, :cassandra
-      klass.__send__ :option, :initial, default: true
+      klass.__send__ :option,  :initial, default: true
     end
 
     # Restricts the relation by a corresponding request

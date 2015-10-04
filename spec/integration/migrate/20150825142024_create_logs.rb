@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class CreateLogs < ROM::Cassandra::Migrations::Migration
+class CreateLogs < ROM::Migrator::Migration
   def up
     call keyspace(:logs)
       .table(:logs)

@@ -102,39 +102,4 @@ describe ROM::Cassandra::Gateway do
     end
   end # describe #dataset
 
-  describe "#migrate" do
-    let(:klass)    { ROM::Cassandra::Migrations::Migrator }
-    let(:session)  { gateway.session }
-    let(:migrator) { double :migrator, apply: nil }
-    let(:path)     { double :path }
-    let(:version)  { double :version }
-    let(:logger)   { double :logger }
-
-    before { allow(klass).to receive(:new) { migrator } }
-
-    context "with options" do
-      after { gateway.migrate path: path, version: version, logger: logger }
-
-      it "initializes the migrator" do
-        expect(klass).to receive(:new).with(session, path: path, logger: logger)
-      end
-
-      it "runs the migrator" do
-        expect(migrator).to receive(:apply).with(version: version)
-      end
-    end
-
-    context "without options" do
-      after { gateway.migrate }
-
-      it "initializes the migrator" do
-        expect(klass).to receive(:new).with(session, {})
-      end
-
-      it "runs the migrator" do
-        expect(migrator).to receive(:apply).with({})
-      end
-    end
-  end # describe #migrate
-
 end # describe ROM:Cassandra::Gateway

@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 require "rom"
+require "rom-migrator"
 
 # Ruby Object Mapper
 #
@@ -23,8 +24,7 @@ module ROM
     require_relative "cassandra/gateway"
     require_relative "cassandra/relation"
     require_relative "cassandra/commands"
-
-    require_relative "cassandra/migrations"
+    require_relative "cassandra/migrator"
 
   end # module Cassandra
 

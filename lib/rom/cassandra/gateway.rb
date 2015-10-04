@@ -10,6 +10,8 @@ module ROM::Cassandra
 
     include Equalizer.new(:options, :datasets)
 
+    adapter :cassandra
+
     # @!attribute [r] session
     #
     # @return [ROM::Cassandra::Session] The current session
@@ -87,18 +89,14 @@ module ROM::Cassandra
       self[name] ? true : false
     end
 
-    # Migrates the Cassandra cluster to given version
+    # Sends CQL query to the current session
     #
-    # @option (see ROM::Cassandra::Migrations::Migrator#new)
-    # @option options [Integer, nil] :version
+    # @param [String] value
     #
     # @return [undefined]
     #
-    def migrate(options = {})
-      settings = options.select { |key| [:path, :logger].include? key }
-      target   = options.select { |key| key.equal? :version }
-
-      Migrations::Migrator.new(session, settings).apply(target)
+    def call(value)
+      session.call value
     end
 
     private

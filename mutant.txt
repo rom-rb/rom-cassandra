@@ -1,0 +1,1828 @@
+Mutant configuration:
+Matcher:         #<Mutant::Matcher::Config match_expressions: [ROM::Cassandra*] ignore_expressions: [ROM::Cassandra::Migrator]>
+Integration:     Mutant::Integration::Rspec
+Expect Coverage: 100.00%
+Jobs:            8
+Includes:        []
+Requires:        ["rom-cassandra"]
+(00/1069) 100% - killtime: 0.00s runtime: 0.00s overhead: 0.00s
+(01/1069)   3% - killtime: 2.80s runtime: 1.03s overhead: -1.77s
+(29/1069)  40% - killtime: 6.14s runtime: 2.03s overhead: -4.11s
+(69/1069)  61% - killtime: 9.00s runtime: 3.04s overhead: -5.96s
+(104/1069)  70% - killtime: 11.85s runtime: 4.05s overhead: -7.80s
+(149/1069)  77% - killtime: 14.91s runtime: 5.05s overhead: -9.85s
+(191/1069)  81% - killtime: 16.95s runtime: 6.06s overhead: -10.89s
+(234/1069)  84% - killtime: 18.76s runtime: 7.06s overhead: -11.70s
+(275/1069)  86% - killtime: 21.01s runtime: 8.07s overhead: -12.94s
+(318/1069)  88% - killtime: 23.03s runtime: 9.07s overhead: -13.96s
+(359/1069)  89% - killtime: 24.91s runtime: 10.07s overhead: -14.84s
+(388/1069)  90% - killtime: 28.80s runtime: 11.08s overhead: -17.72s
+(418/1069)  90% - killtime: 32.29s runtime: 12.10s overhead: -20.19s
+(447/1069)  91% - killtime: 35.54s runtime: 13.10s overhead: -22.44s
+(474/1069)  91% - killtime: 39.33s runtime: 14.10s overhead: -25.23s
+(499/1069)  92% - killtime: 42.89s runtime: 15.11s overhead: -27.78s
+(519/1069)  92% - killtime: 47.82s runtime: 16.11s overhead: -31.71s
+(533/1069)  92% - killtime: 52.96s runtime: 17.11s overhead: -35.85s
+(541/1069)  92% - killtime: 55.91s runtime: 18.11s overhead: -37.80s
+(542/1069)  91% - killtime: 65.55s runtime: 19.12s overhead: -46.43s
+(542/1069)  90% - killtime: 73.84s runtime: 20.12s overhead: -53.73s
+(543/1069)  90% - killtime: 77.44s runtime: 21.12s overhead: -56.32s
+(543/1069)  89% - killtime: 84.66s runtime: 22.12s overhead: -62.54s
+(544/1069)  88% - killtime: 94.19s runtime: 23.12s overhead: -71.07s
+(544/1069)  87% - killtime: 101.05s runtime: 24.12s overhead: -76.93s
+(544/1069)  87% - killtime: 104.86s runtime: 25.13s overhead: -79.74s
+(544/1069)  86% - killtime: 113.29s runtime: 26.13s overhead: -87.16s
+(544/1069)  85% - killtime: 122.24s runtime: 27.13s overhead: -95.11s
+(545/1069)  84% - killtime: 130.58s runtime: 28.13s overhead: -102.45s
+(545/1069)  83% - killtime: 134.30s runtime: 29.13s overhead: -105.16s
+(545/1069)  83% - killtime: 143.14s runtime: 30.14s overhead: -113.00s
+(546/1069)  82% - killtime: 152.27s runtime: 31.14s overhead: -121.13s
+(546/1069)  82% - killtime: 154.95s runtime: 32.14s overhead: -122.81s
+(546/1069)  81% - killtime: 164.08s runtime: 33.14s overhead: -130.94s
+(546/1069)  80% - killtime: 173.07s runtime: 34.14s overhead: -138.93s
+(546/1069)  80% - killtime: 176.89s runtime: 35.15s overhead: -141.74s
+(547/1069)  79% - killtime: 185.90s runtime: 36.15s overhead: -149.75s
+(548/1069)  78% - killtime: 195.03s runtime: 37.15s overhead: -157.88s
+(567/1069)  78% - killtime: 199.17s runtime: 38.15s overhead: -161.02s
+(600/1069)  79% - killtime: 205.50s runtime: 39.15s overhead: -166.34s
+(639/1069)  80% - killtime: 207.79s runtime: 40.16s overhead: -167.64s
+(679/1069)  81% - killtime: 208.82s runtime: 41.16s overhead: -167.66s
+(721/1069)  82% - killtime: 209.65s runtime: 42.17s overhead: -167.48s
+(761/1069)  83% - killtime: 210.59s runtime: 43.17s overhead: -167.42s
+(793/1069)  83% - killtime: 212.56s runtime: 44.18s overhead: -168.38s
+(822/1069)  84% - killtime: 215.30s runtime: 45.19s overhead: -170.10s
+(851/1069)  84% - killtime: 217.51s runtime: 46.19s overhead: -171.32s
+(870/1069)  84% - killtime: 222.06s runtime: 47.20s overhead: -174.86s
+(902/1069)  85% - killtime: 224.97s runtime: 48.20s overhead: -176.76s
+(915/1069)  85% - killtime: 226.12s runtime: 49.20s overhead: -176.92s
+ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12
+- rspec:7:./spec/unit/commands/batch_spec.rb:12/ROM::Cassandra::Commands::Batch.new 
+- rspec:8:./spec/unit/commands/batch_spec.rb:18/ROM::Cassandra::Commands::Batch#relation restricts dataset by UPDATE statements
+- rspec:9:./spec/unit/commands/batch_spec.rb:26/ROM::Cassandra::Commands::Batch#method_missing returns a command
+- rspec:10:./spec/unit/commands/batch_spec.rb:30/ROM::Cassandra::Commands::Batch#method_missing updates the relation
+- rspec:11:./spec/unit/commands/batch_spec.rb:42/ROM::Cassandra::Commands::Batch#respond_to_missing? method of #relation 
+- rspec:12:./spec/unit/commands/batch_spec.rb:48/ROM::Cassandra::Commands::Batch#respond_to_missing? method not defined for #relation 
+- rspec:13:./spec/unit/commands/batch_spec.rb:59/ROM::Cassandra::Commands::Batch#execute without argument applies #to_a
+- rspec:14:./spec/unit/commands/batch_spec.rb:69/ROM::Cassandra::Commands::Batch#execute with argument updates and finalizes the command
+- rspec:15:./spec/unit/commands/batch_spec.rb:79/ROM::Cassandra::Commands::Batch#keyspace returns query
+- rspec:16:./spec/unit/commands/create_spec.rb:12/ROM::Cassandra::Commands::Create.new 
+- rspec:17:./spec/unit/commands/create_spec.rb:18/ROM::Cassandra::Commands::Create#relation restricts dataset by INSERT statements
+- rspec:18:./spec/unit/commands/create_spec.rb:26/ROM::Cassandra::Commands::Create#method_missing returns a command
+- rspec:19:./spec/unit/commands/create_spec.rb:30/ROM::Cassandra::Commands::Create#method_missing updates the relation
+- rspec:20:./spec/unit/commands/create_spec.rb:42/ROM::Cassandra::Commands::Create#respond_to_missing? method of #relation 
+- rspec:21:./spec/unit/commands/create_spec.rb:48/ROM::Cassandra::Commands::Create#respond_to_missing? method not defined for #relation 
+- rspec:22:./spec/unit/commands/create_spec.rb:59/ROM::Cassandra::Commands::Create#execute without argument applies #to_a
+- rspec:23:./spec/unit/commands/create_spec.rb:69/ROM::Cassandra::Commands::Create#execute with argument updates and finalizes the command
+- rspec:24:./spec/unit/commands/delete_spec.rb:12/ROM::Cassandra::Commands::Delete.new 
+- rspec:25:./spec/unit/commands/delete_spec.rb:18/ROM::Cassandra::Commands::Delete#relation restricts dataset by DELETE statements
+- rspec:26:./spec/unit/commands/delete_spec.rb:26/ROM::Cassandra::Commands::Delete#method_missing returns a command
+- rspec:27:./spec/unit/commands/delete_spec.rb:30/ROM::Cassandra::Commands::Delete#method_missing updates the relation
+- rspec:28:./spec/unit/commands/delete_spec.rb:42/ROM::Cassandra::Commands::Delete#respond_to_missing? method of #relation 
+- rspec:29:./spec/unit/commands/delete_spec.rb:48/ROM::Cassandra::Commands::Delete#respond_to_missing? method not defined for #relation 
+- rspec:30:./spec/unit/commands/delete_spec.rb:59/ROM::Cassandra::Commands::Delete#execute without argument applies #to_a
+- rspec:31:./spec/unit/commands/delete_spec.rb:69/ROM::Cassandra::Commands::Delete#execute with argument updates and finalizes the command
+- rspec:32:./spec/unit/commands/update_spec.rb:12/ROM::Cassandra::Commands::Update.new 
+- rspec:33:./spec/unit/commands/update_spec.rb:18/ROM::Cassandra::Commands::Update#relation restricts dataset by UPDATE statements
+- rspec:34:./spec/unit/commands/update_spec.rb:26/ROM::Cassandra::Commands::Update#method_missing returns a command
+- rspec:35:./spec/unit/commands/update_spec.rb:30/ROM::Cassandra::Commands::Update#method_missing updates the relation
+- rspec:36:./spec/unit/commands/update_spec.rb:42/ROM::Cassandra::Commands::Update#respond_to_missing? method of #relation 
+- rspec:37:./spec/unit/commands/update_spec.rb:48/ROM::Cassandra::Commands::Update#respond_to_missing? method not defined for #relation 
+- rspec:38:./spec/unit/commands/update_spec.rb:59/ROM::Cassandra::Commands::Update#execute without argument applies #to_a
+- rspec:39:./spec/unit/commands/update_spec.rb:69/ROM::Cassandra::Commands::Update#execute with argument updates and finalizes the command
+evil:ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12:60485
+@@ -1,5 +1,5 @@
+-def self.included(klass)
++def self.included
+   klass.__send__(:adapter, :cassandra)
+   klass.__send__(:option, :initial, default: true)
+ end
+-----------------------
+evil:ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12:fd4bd
+@@ -1,5 +1,5 @@
+ def self.included(klass)
+-  klass.__send__(:adapter, :cassandra)
++  klass
+   klass.__send__(:option, :initial, default: true)
+ end
+-----------------------
+evil:ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12:e9680
+@@ -1,5 +1,5 @@
+ def self.included(klass)
+-  klass.__send__(:adapter, :cassandra)
++  nil
+   klass.__send__(:option, :initial, default: true)
+ end
+-----------------------
+evil:ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12:c0c65
+@@ -1,5 +1,5 @@
+-def self.included(klass)
++def self.included(klass__mutant__)
+   klass.__send__(:adapter, :cassandra)
+   klass.__send__(:option, :initial, default: true)
+ end
+-----------------------
+evil:ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12:38c30
+@@ -1,5 +1,3 @@
+ def self.included(klass)
+-  klass.__send__(:adapter, :cassandra)
+-  klass.__send__(:option, :initial, default: true)
+ end
+-----------------------
+evil:ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12:dda9f
+@@ -1,5 +1,5 @@
+ def self.included(klass)
+-  klass.__send__(:adapter, :cassandra)
++  self
+   klass.__send__(:option, :initial, default: true)
+ end
+-----------------------
+evil:ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12:f866f
+@@ -1,5 +1,4 @@
+ def self.included(klass)
+-  klass.__send__(:adapter, :cassandra)
+-  klass.__send__(:option, :initial, default: true)
++  raise
+ end
+-----------------------
+evil:ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12:34c2b
+@@ -1,5 +1,5 @@
+ def self.included(klass)
+-  klass.__send__(:adapter, :cassandra)
++  klass.public_send(:adapter, :cassandra)
+   klass.__send__(:option, :initial, default: true)
+ end
+-----------------------
+evil:ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12:d65a2
+@@ -1,5 +1,5 @@
+ def self.included(klass)
+-  klass.__send__(:adapter, :cassandra)
++  self.__send__(:adapter, :cassandra)
+   klass.__send__(:option, :initial, default: true)
+ end
+-----------------------
+evil:ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12:d4c2d
+@@ -1,5 +1,5 @@
+ def self.included(klass)
+-  klass.__send__(:adapter, :cassandra)
++  klass.__send__
+   klass.__send__(:option, :initial, default: true)
+ end
+-----------------------
+evil:ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12:21fa6
+@@ -1,5 +1,5 @@
+ def self.included(klass)
+-  klass.__send__(:adapter, :cassandra)
++  klass.__send__(nil, :cassandra)
+   klass.__send__(:option, :initial, default: true)
+ end
+-----------------------
+evil:ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12:8860e
+@@ -1,5 +1,5 @@
+ def self.included(klass)
+-  klass.__send__(:adapter, :cassandra)
++  klass.__send__(self, :cassandra)
+   klass.__send__(:option, :initial, default: true)
+ end
+-----------------------
+evil:ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12:13b02
+@@ -1,5 +1,5 @@
+ def self.included(klass)
+-  klass.__send__(:adapter, :cassandra)
++  klass.__send__(:cassandra)
+   klass.__send__(:option, :initial, default: true)
+ end
+-----------------------
+evil:ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12:5e3a2
+@@ -1,5 +1,5 @@
+ def self.included(klass)
+-  klass.__send__(:adapter, :cassandra)
++  klass.__send__(:adapter, nil)
+   klass.__send__(:option, :initial, default: true)
+ end
+-----------------------
+evil:ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12:37cb4
+@@ -1,5 +1,5 @@
+ def self.included(klass)
+-  klass.__send__(:adapter, :cassandra)
++  klass.__send__(:adapter__mutant__, :cassandra)
+   klass.__send__(:option, :initial, default: true)
+ end
+-----------------------
+evil:ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12:0f904
+@@ -1,5 +1,5 @@
+ def self.included(klass)
+-  klass.__send__(:adapter, :cassandra)
++  klass.__send__(:adapter, self)
+   klass.__send__(:option, :initial, default: true)
+ end
+-----------------------
+evil:ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12:d0115
+@@ -1,5 +1,5 @@
+ def self.included(klass)
+-  klass.__send__(:adapter, :cassandra)
++  klass.__send__(:adapter)
+   klass.__send__(:option, :initial, default: true)
+ end
+-----------------------
+evil:ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12:34b0b
+@@ -1,5 +1,5 @@
+ def self.included(klass)
+-  klass.__send__(:adapter, :cassandra)
++  klass.__send__(:adapter, :cassandra__mutant__)
+   klass.__send__(:option, :initial, default: true)
+ end
+-----------------------
+evil:ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12:499dd
+@@ -1,5 +1,5 @@
+ def self.included(klass)
+   klass.__send__(:adapter, :cassandra)
+-  klass.__send__(:option, :initial, default: true)
++  self
+ end
+-----------------------
+evil:ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12:ed45e
+@@ -1,5 +1,5 @@
+ def self.included(klass)
+   klass.__send__(:adapter, :cassandra)
+-  klass.__send__(:option, :initial, default: true)
++  nil
+ end
+-----------------------
+evil:ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12:27260
+@@ -1,5 +1,5 @@
+ def self.included(klass)
+   klass.__send__(:adapter, :cassandra)
+-  klass.__send__(:option, :initial, default: true)
++  klass
+ end
+-----------------------
+evil:ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12:adbec
+@@ -1,5 +1,5 @@
+ def self.included(klass)
+   klass.__send__(:adapter, :cassandra)
+-  klass.__send__(:option, :initial, default: true)
++  self.__send__(:option, :initial, default: true)
+ end
+-----------------------
+evil:ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12:1d9f9
+@@ -1,5 +1,5 @@
+ def self.included(klass)
+   klass.__send__(:adapter, :cassandra)
+-  klass.__send__(:option, :initial, default: true)
++  klass.public_send(:option, :initial, default: true)
+ end
+-----------------------
+evil:ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12:ebcc1
+@@ -1,5 +1,5 @@
+ def self.included(klass)
+   klass.__send__(:adapter, :cassandra)
+-  klass.__send__(:option, :initial, default: true)
++  klass.__send__
+ end
+-----------------------
+evil:ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12:b3690
+@@ -1,5 +1,5 @@
+ def self.included(klass)
+   klass.__send__(:adapter, :cassandra)
+-  klass.__send__(:option, :initial, default: true)
++  klass.__send__(nil, :initial, default: true)
+ end
+-----------------------
+evil:ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12:4f1a5
+@@ -1,5 +1,5 @@
+ def self.included(klass)
+   klass.__send__(:adapter, :cassandra)
+-  klass.__send__(:option, :initial, default: true)
++  klass.__send__(:option__mutant__, :initial, default: true)
+ end
+-----------------------
+evil:ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12:bda9c
+@@ -1,5 +1,5 @@
+ def self.included(klass)
+   klass.__send__(:adapter, :cassandra)
+-  klass.__send__(:option, :initial, default: true)
++  klass.__send__(:initial, default: true)
+ end
+-----------------------
+evil:ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12:cdd70
+@@ -1,5 +1,5 @@
+ def self.included(klass)
+   klass.__send__(:adapter, :cassandra)
+-  klass.__send__(:option, :initial, default: true)
++  klass.__send__(self, :initial, default: true)
+ end
+-----------------------
+evil:ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12:ab781
+@@ -1,5 +1,5 @@
+ def self.included(klass)
+   klass.__send__(:adapter, :cassandra)
+-  klass.__send__(:option, :initial, default: true)
++  klass.__send__(:option, self, default: true)
+ end
+-----------------------
+evil:ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12:067f2
+@@ -1,5 +1,5 @@
+ def self.included(klass)
+   klass.__send__(:adapter, :cassandra)
+-  klass.__send__(:option, :initial, default: true)
++  klass.__send__(:option, nil, default: true)
+ end
+-----------------------
+evil:ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12:c8423
+@@ -1,5 +1,5 @@
+ def self.included(klass)
+   klass.__send__(:adapter, :cassandra)
+-  klass.__send__(:option, :initial, default: true)
++  klass.__send__(:option, :initial__mutant__, default: true)
+ end
+-----------------------
+evil:ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12:c9a41
+@@ -1,5 +1,5 @@
+ def self.included(klass)
+   klass.__send__(:adapter, :cassandra)
+-  klass.__send__(:option, :initial, default: true)
++  klass.__send__(:option, default: true)
+ end
+-----------------------
+evil:ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12:dc908
+@@ -1,5 +1,5 @@
+ def self.included(klass)
+   klass.__send__(:adapter, :cassandra)
+-  klass.__send__(:option, :initial, default: true)
++  klass.__send__(:option, :initial, self)
+ end
+-----------------------
+evil:ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12:4a16a
+@@ -1,5 +1,5 @@
+ def self.included(klass)
+   klass.__send__(:adapter, :cassandra)
+-  klass.__send__(:option, :initial, default: true)
++  klass.__send__(:option, :initial, nil)
+ end
+-----------------------
+evil:ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12:5592b
+@@ -1,5 +1,5 @@
+ def self.included(klass)
+   klass.__send__(:adapter, :cassandra)
+-  klass.__send__(:option, :initial, default: true)
++  klass.__send__(:option, :initial, {})
+ end
+-----------------------
+evil:ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12:4a68e
+@@ -1,5 +1,5 @@
+ def self.included(klass)
+   klass.__send__(:adapter, :cassandra)
+-  klass.__send__(:option, :initial, default: true)
++  klass.__send__(:option, :initial, nil => true)
+ end
+-----------------------
+evil:ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12:c77d9
+@@ -1,5 +1,5 @@
+ def self.included(klass)
+   klass.__send__(:adapter, :cassandra)
+-  klass.__send__(:option, :initial, default: true)
++  klass.__send__(:option, :initial, self => true)
+ end
+-----------------------
+evil:ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12:d4d03
+@@ -1,5 +1,5 @@
+ def self.included(klass)
+   klass.__send__(:adapter, :cassandra)
+-  klass.__send__(:option, :initial, default: true)
++  klass.__send__(:option, :initial, default__mutant__: true)
+ end
+-----------------------
+evil:ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12:7e66d
+@@ -1,5 +1,5 @@
+ def self.included(klass)
+   klass.__send__(:adapter, :cassandra)
+-  klass.__send__(:option, :initial, default: true)
++  klass.__send__(:option, :initial, default: nil)
+ end
+-----------------------
+evil:ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12:32d8b
+@@ -1,5 +1,4 @@
+ def self.included(klass)
+   klass.__send__(:adapter, :cassandra)
+-  klass.__send__(:option, :initial, default: true)
+ end
+-----------------------
+evil:ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12:a229f
+@@ -1,5 +1,5 @@
+ def self.included(klass)
+   klass.__send__(:adapter, :cassandra)
+-  klass.__send__(:option, :initial, default: true)
++  klass.__send__(:option, :initial)
+ end
+-----------------------
+evil:ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12:a09eb
+@@ -1,5 +1,5 @@
+ def self.included(klass)
+   klass.__send__(:adapter, :cassandra)
+-  klass.__send__(:option, :initial, default: true)
++  klass.__send__(:option, :initial, default: false)
+ end
+-----------------------
+evil:ROM::Cassandra::Commands.included:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/commands.rb:12:aadf4
+@@ -1,5 +1,4 @@
+ def self.included(klass)
+-  klass.__send__(:adapter, :cassandra)
+   klass.__send__(:option, :initial, default: true)
+ end
+-----------------------
+ROM::Cassandra::Migrator#call:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:53
+- rspec:7:./spec/unit/commands/batch_spec.rb:12/ROM::Cassandra::Commands::Batch.new 
+- rspec:8:./spec/unit/commands/batch_spec.rb:18/ROM::Cassandra::Commands::Batch#relation restricts dataset by UPDATE statements
+- rspec:9:./spec/unit/commands/batch_spec.rb:26/ROM::Cassandra::Commands::Batch#method_missing returns a command
+- rspec:10:./spec/unit/commands/batch_spec.rb:30/ROM::Cassandra::Commands::Batch#method_missing updates the relation
+- rspec:11:./spec/unit/commands/batch_spec.rb:42/ROM::Cassandra::Commands::Batch#respond_to_missing? method of #relation 
+- rspec:12:./spec/unit/commands/batch_spec.rb:48/ROM::Cassandra::Commands::Batch#respond_to_missing? method not defined for #relation 
+- rspec:13:./spec/unit/commands/batch_spec.rb:59/ROM::Cassandra::Commands::Batch#execute without argument applies #to_a
+- rspec:14:./spec/unit/commands/batch_spec.rb:69/ROM::Cassandra::Commands::Batch#execute with argument updates and finalizes the command
+- rspec:15:./spec/unit/commands/batch_spec.rb:79/ROM::Cassandra::Commands::Batch#keyspace returns query
+- rspec:16:./spec/unit/commands/create_spec.rb:12/ROM::Cassandra::Commands::Create.new 
+- rspec:17:./spec/unit/commands/create_spec.rb:18/ROM::Cassandra::Commands::Create#relation restricts dataset by INSERT statements
+- rspec:18:./spec/unit/commands/create_spec.rb:26/ROM::Cassandra::Commands::Create#method_missing returns a command
+- rspec:19:./spec/unit/commands/create_spec.rb:30/ROM::Cassandra::Commands::Create#method_missing updates the relation
+- rspec:20:./spec/unit/commands/create_spec.rb:42/ROM::Cassandra::Commands::Create#respond_to_missing? method of #relation 
+- rspec:21:./spec/unit/commands/create_spec.rb:48/ROM::Cassandra::Commands::Create#respond_to_missing? method not defined for #relation 
+- rspec:22:./spec/unit/commands/create_spec.rb:59/ROM::Cassandra::Commands::Create#execute without argument applies #to_a
+- rspec:23:./spec/unit/commands/create_spec.rb:69/ROM::Cassandra::Commands::Create#execute with argument updates and finalizes the command
+- rspec:24:./spec/unit/commands/delete_spec.rb:12/ROM::Cassandra::Commands::Delete.new 
+- rspec:25:./spec/unit/commands/delete_spec.rb:18/ROM::Cassandra::Commands::Delete#relation restricts dataset by DELETE statements
+- rspec:26:./spec/unit/commands/delete_spec.rb:26/ROM::Cassandra::Commands::Delete#method_missing returns a command
+- rspec:27:./spec/unit/commands/delete_spec.rb:30/ROM::Cassandra::Commands::Delete#method_missing updates the relation
+- rspec:28:./spec/unit/commands/delete_spec.rb:42/ROM::Cassandra::Commands::Delete#respond_to_missing? method of #relation 
+- rspec:29:./spec/unit/commands/delete_spec.rb:48/ROM::Cassandra::Commands::Delete#respond_to_missing? method not defined for #relation 
+- rspec:30:./spec/unit/commands/delete_spec.rb:59/ROM::Cassandra::Commands::Delete#execute without argument applies #to_a
+- rspec:31:./spec/unit/commands/delete_spec.rb:69/ROM::Cassandra::Commands::Delete#execute with argument updates and finalizes the command
+- rspec:32:./spec/unit/commands/update_spec.rb:12/ROM::Cassandra::Commands::Update.new 
+- rspec:33:./spec/unit/commands/update_spec.rb:18/ROM::Cassandra::Commands::Update#relation restricts dataset by UPDATE statements
+- rspec:34:./spec/unit/commands/update_spec.rb:26/ROM::Cassandra::Commands::Update#method_missing returns a command
+- rspec:35:./spec/unit/commands/update_spec.rb:30/ROM::Cassandra::Commands::Update#method_missing updates the relation
+- rspec:36:./spec/unit/commands/update_spec.rb:42/ROM::Cassandra::Commands::Update#respond_to_missing? method of #relation 
+- rspec:37:./spec/unit/commands/update_spec.rb:48/ROM::Cassandra::Commands::Update#respond_to_missing? method not defined for #relation 
+- rspec:38:./spec/unit/commands/update_spec.rb:59/ROM::Cassandra::Commands::Update#execute without argument applies #to_a
+- rspec:39:./spec/unit/commands/update_spec.rb:69/ROM::Cassandra::Commands::Update#execute with argument updates and finalizes the command
+- rspec:40:./spec/unit/dataset_spec.rb:15/ROM::Cassandra::Dataset#session 
+- rspec:41:./spec/unit/dataset_spec.rb:21/ROM::Cassandra::Dataset#keyspace 
+- rspec:42:./spec/unit/dataset_spec.rb:27/ROM::Cassandra::Dataset#table 
+- rspec:43:./spec/unit/dataset_spec.rb:34/ROM::Cassandra::Dataset#query when it is set 
+- rspec:44:./spec/unit/dataset_spec.rb:40/ROM::Cassandra::Dataset#query when it isn't set returns the context of table
+- rspec:45:./spec/unit/dataset_spec.rb:52/ROM::Cassandra::Dataset#get forwards calls to the #query
+- rspec:46:./spec/unit/dataset_spec.rb:57/ROM::Cassandra::Dataset#get returns the dataset with updated query
+- rspec:47:./spec/unit/dataset_spec.rb:70/ROM::Cassandra::Dataset#batch returns the dataset with updated query
+- rspec:48:./spec/unit/dataset_spec.rb:83/ROM::Cassandra::Dataset#each with a block sends #query to #session and iterates through the result
+- rspec:49:./spec/unit/dataset_spec.rb:92/ROM::Cassandra::Dataset#each without a block sends #query to #session and returns #result's enumerator
+- rspec:50:./spec/unit/dataset_spec.rb:105/ROM::Cassandra::Dataset#respond_to? method defined for #query 
+- rspec:51:./spec/unit/dataset_spec.rb:109/ROM::Cassandra::Dataset#respond_to? method missing for #query 
+- rspec:52:./spec/unit/dataset_spec.rb:119/ROM::Cassandra::Dataset#method_missing forwards calls to the #query
+- rspec:53:./spec/unit/dataset_spec.rb:124/ROM::Cassandra::Dataset#method_missing returns the dataset with updated query
+- rspec:54:./spec/unit/gateway_spec.rb:13/ROM::Cassandra::Gateway.new creates the session with uri
+- rspec:55:./spec/unit/gateway_spec.rb:22/ROM::Cassandra::Gateway#options returns a uri
+- rspec:56:./spec/unit/gateway_spec.rb:30/ROM::Cassandra::Gateway#session is a session
+- rspec:57:./spec/unit/gateway_spec.rb:34/ROM::Cassandra::Gateway#session has a proper uri
+- rspec:58:./spec/unit/gateway_spec.rb:43/ROM::Cassandra::Gateway#[] by default 
+- rspec:59:./spec/unit/gateway_spec.rb:49/ROM::Cassandra::Gateway#[] registered dataset 
+- rspec:60:./spec/unit/gateway_spec.rb:57/ROM::Cassandra::Gateway#dataset? by default 
+- rspec:61:./spec/unit/gateway_spec.rb:63/ROM::Cassandra::Gateway#dataset? registered dataset 
+- rspec:62:./spec/unit/gateway_spec.rb:73/ROM::Cassandra::Gateway#dataset with valid name registers the dataset for given table
+- rspec:63:./spec/unit/gateway_spec.rb:86/ROM::Cassandra::Gateway#dataset with a string name registers the dataset for given table
+- rspec:64:./spec/unit/gateway_spec.rb:94/ROM::Cassandra::Gateway#dataset with invalid name fails
+- rspec:65:./spec/unit/query_spec.rb:8/ROM::Cassandra::Query encapsulates queries
+- rspec:66:./spec/unit/query_spec.rb:12/ROM::Cassandra::Query builds queries
+- rspec:67:./spec/unit/query_spec.rb:16/ROM::Cassandra::Query responds to methods allowed by query
+- rspec:68:./spec/unit/relation_spec.rb:12/ROM::Cassandra::Relation.new 
+- rspec:69:./spec/unit/relation_spec.rb:18/ROM::Cassandra::Relation#source stores the source dataset
+- rspec:70:./spec/unit/relation_spec.rb:26/ROM::Cassandra::Relation#dataset applies #get to the source dataset
+- rspec:71:./spec/unit/relation_spec.rb:37/ROM::Cassandra::Relation#insert_query returns a relation
+- rspec:72:./spec/unit/relation_spec.rb:41/ROM::Cassandra::Relation#insert_query preserves #source
+- rspec:73:./spec/unit/relation_spec.rb:45/ROM::Cassandra::Relation#insert_query sets source.insert as a dataset
+- rspec:74:./spec/unit/relation_spec.rb:56/ROM::Cassandra::Relation#update_query returns a relation
+- rspec:75:./spec/unit/relation_spec.rb:60/ROM::Cassandra::Relation#update_query preserves #source
+- rspec:76:./spec/unit/relation_spec.rb:64/ROM::Cassandra::Relation#update_query sets source.update as a dataset
+- rspec:77:./spec/unit/relation_spec.rb:75/ROM::Cassandra::Relation#delete_query returns a relation
+- rspec:78:./spec/unit/relation_spec.rb:79/ROM::Cassandra::Relation#delete_query preserves #source
+- rspec:79:./spec/unit/relation_spec.rb:83/ROM::Cassandra::Relation#delete_query sets source.delete as a dataset
+- rspec:80:./spec/unit/relation_spec.rb:94/ROM::Cassandra::Relation#batch_query returns a relation
+- rspec:81:./spec/unit/relation_spec.rb:98/ROM::Cassandra::Relation#batch_query preserves #source
+- rspec:82:./spec/unit/relation_spec.rb:102/ROM::Cassandra::Relation#batch_query sets source.batch as a dataset
+- rspec:83:./spec/unit/relation_spec.rb:111/ROM::Cassandra::Relation#respond_to? method, defined for #dataset 
+- rspec:84:./spec/unit/relation_spec.rb:117/ROM::Cassandra::Relation#respond_to? method, not defined for #dataset 
+- rspec:85:./spec/unit/relation_spec.rb:124/ROM::Cassandra::Relation#method_missing forwards call to #dataset
+- rspec:86:./spec/unit/relation_spec.rb:129/ROM::Cassandra::Relation#method_missing returns a relation
+- rspec:87:./spec/unit/relation_spec.rb:133/ROM::Cassandra::Relation#method_missing preserves #source
+- rspec:88:./spec/unit/relation_spec.rb:137/ROM::Cassandra::Relation#method_missing updates dataset
+- rspec:89:./spec/unit/session_spec.rb:13/ROM::Cassandra::Session.new fails with wrong uri
+- rspec:90:./spec/unit/session_spec.rb:22/ROM::Cassandra::Session#uri from hash 
+- rspec:91:./spec/unit/session_spec.rb:28/ROM::Cassandra::Session#uri from nil 
+- rspec:92:./spec/unit/session_spec.rb:34/ROM::Cassandra::Session#uri from string 
+- rspec:93:./spec/unit/session_spec.rb:40/ROM::Cassandra::Session#uri from string and hash 
+- rspec:94:./spec/unit/session_spec.rb:47/ROM::Cassandra::Session#call returns the result of running query
+evil:ROM::Cassandra::Migrator#call:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:53:80839
+@@ -1,4 +1,4 @@
+-def call(query)
++def call(query__mutant__)
+   gateway.session.call(query)
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#call:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:53:81586
+@@ -1,4 +1,4 @@
+-def call(query)
++def call
+   gateway.session.call(query)
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#call:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:53:5a29b
+@@ -1,4 +1,3 @@
+ def call(query)
+-  gateway.session.call(query)
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#call:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:53:faa50
+@@ -1,4 +1,4 @@
+ def call(query)
+-  gateway.session.call(query)
++  raise
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#call:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:53:38474
+@@ -1,4 +1,4 @@
+ def call(query)
+-  gateway.session.call(query)
++  nil
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#call:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:53:7a4ac
+@@ -1,4 +1,4 @@
+ def call(query)
+-  gateway.session.call(query)
++  gateway.session
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#call:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:53:7abb0
+@@ -1,4 +1,4 @@
+ def call(query)
+-  gateway.session.call(query)
++  self
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#call:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:53:3069a
+@@ -1,4 +1,4 @@
+ def call(query)
+-  gateway.session.call(query)
++  query
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#call:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:53:01d6b
+@@ -1,4 +1,4 @@
+ def call(query)
+-  gateway.session.call(query)
++  self.call(query)
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#call:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:53:97871
+@@ -1,4 +1,4 @@
+ def call(query)
+-  gateway.session.call(query)
++  self.session.call(query)
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#call:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:53:74548
+@@ -1,4 +1,4 @@
+ def call(query)
+-  gateway.session.call(query)
++  gateway.session.call(nil)
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#call:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:53:d21ef
+@@ -1,4 +1,4 @@
+ def call(query)
+-  gateway.session.call(query)
++  gateway.session.call
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#call:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:53:85b1a
+@@ -1,4 +1,4 @@
+ def call(query)
+-  gateway.session.call(query)
++  gateway.call(query)
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#call:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:53:1cd9f
+@@ -1,4 +1,4 @@
+ def call(query)
+-  gateway.session.call(query)
++  gateway.session.call(self)
+ end
+-----------------------
+ROM::Cassandra::Migrator#keyspace:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:63
+- rspec:7:./spec/unit/commands/batch_spec.rb:12/ROM::Cassandra::Commands::Batch.new 
+- rspec:8:./spec/unit/commands/batch_spec.rb:18/ROM::Cassandra::Commands::Batch#relation restricts dataset by UPDATE statements
+- rspec:9:./spec/unit/commands/batch_spec.rb:26/ROM::Cassandra::Commands::Batch#method_missing returns a command
+- rspec:10:./spec/unit/commands/batch_spec.rb:30/ROM::Cassandra::Commands::Batch#method_missing updates the relation
+- rspec:11:./spec/unit/commands/batch_spec.rb:42/ROM::Cassandra::Commands::Batch#respond_to_missing? method of #relation 
+- rspec:12:./spec/unit/commands/batch_spec.rb:48/ROM::Cassandra::Commands::Batch#respond_to_missing? method not defined for #relation 
+- rspec:13:./spec/unit/commands/batch_spec.rb:59/ROM::Cassandra::Commands::Batch#execute without argument applies #to_a
+- rspec:14:./spec/unit/commands/batch_spec.rb:69/ROM::Cassandra::Commands::Batch#execute with argument updates and finalizes the command
+- rspec:15:./spec/unit/commands/batch_spec.rb:79/ROM::Cassandra::Commands::Batch#keyspace returns query
+- rspec:16:./spec/unit/commands/create_spec.rb:12/ROM::Cassandra::Commands::Create.new 
+- rspec:17:./spec/unit/commands/create_spec.rb:18/ROM::Cassandra::Commands::Create#relation restricts dataset by INSERT statements
+- rspec:18:./spec/unit/commands/create_spec.rb:26/ROM::Cassandra::Commands::Create#method_missing returns a command
+- rspec:19:./spec/unit/commands/create_spec.rb:30/ROM::Cassandra::Commands::Create#method_missing updates the relation
+- rspec:20:./spec/unit/commands/create_spec.rb:42/ROM::Cassandra::Commands::Create#respond_to_missing? method of #relation 
+- rspec:21:./spec/unit/commands/create_spec.rb:48/ROM::Cassandra::Commands::Create#respond_to_missing? method not defined for #relation 
+- rspec:22:./spec/unit/commands/create_spec.rb:59/ROM::Cassandra::Commands::Create#execute without argument applies #to_a
+- rspec:23:./spec/unit/commands/create_spec.rb:69/ROM::Cassandra::Commands::Create#execute with argument updates and finalizes the command
+- rspec:24:./spec/unit/commands/delete_spec.rb:12/ROM::Cassandra::Commands::Delete.new 
+- rspec:25:./spec/unit/commands/delete_spec.rb:18/ROM::Cassandra::Commands::Delete#relation restricts dataset by DELETE statements
+- rspec:26:./spec/unit/commands/delete_spec.rb:26/ROM::Cassandra::Commands::Delete#method_missing returns a command
+- rspec:27:./spec/unit/commands/delete_spec.rb:30/ROM::Cassandra::Commands::Delete#method_missing updates the relation
+- rspec:28:./spec/unit/commands/delete_spec.rb:42/ROM::Cassandra::Commands::Delete#respond_to_missing? method of #relation 
+- rspec:29:./spec/unit/commands/delete_spec.rb:48/ROM::Cassandra::Commands::Delete#respond_to_missing? method not defined for #relation 
+- rspec:30:./spec/unit/commands/delete_spec.rb:59/ROM::Cassandra::Commands::Delete#execute without argument applies #to_a
+- rspec:31:./spec/unit/commands/delete_spec.rb:69/ROM::Cassandra::Commands::Delete#execute with argument updates and finalizes the command
+- rspec:32:./spec/unit/commands/update_spec.rb:12/ROM::Cassandra::Commands::Update.new 
+- rspec:33:./spec/unit/commands/update_spec.rb:18/ROM::Cassandra::Commands::Update#relation restricts dataset by UPDATE statements
+- rspec:34:./spec/unit/commands/update_spec.rb:26/ROM::Cassandra::Commands::Update#method_missing returns a command
+- rspec:35:./spec/unit/commands/update_spec.rb:30/ROM::Cassandra::Commands::Update#method_missing updates the relation
+- rspec:36:./spec/unit/commands/update_spec.rb:42/ROM::Cassandra::Commands::Update#respond_to_missing? method of #relation 
+- rspec:37:./spec/unit/commands/update_spec.rb:48/ROM::Cassandra::Commands::Update#respond_to_missing? method not defined for #relation 
+- rspec:38:./spec/unit/commands/update_spec.rb:59/ROM::Cassandra::Commands::Update#execute without argument applies #to_a
+- rspec:39:./spec/unit/commands/update_spec.rb:69/ROM::Cassandra::Commands::Update#execute with argument updates and finalizes the command
+- rspec:40:./spec/unit/dataset_spec.rb:15/ROM::Cassandra::Dataset#session 
+- rspec:41:./spec/unit/dataset_spec.rb:21/ROM::Cassandra::Dataset#keyspace 
+- rspec:42:./spec/unit/dataset_spec.rb:27/ROM::Cassandra::Dataset#table 
+- rspec:43:./spec/unit/dataset_spec.rb:34/ROM::Cassandra::Dataset#query when it is set 
+- rspec:44:./spec/unit/dataset_spec.rb:40/ROM::Cassandra::Dataset#query when it isn't set returns the context of table
+- rspec:45:./spec/unit/dataset_spec.rb:52/ROM::Cassandra::Dataset#get forwards calls to the #query
+- rspec:46:./spec/unit/dataset_spec.rb:57/ROM::Cassandra::Dataset#get returns the dataset with updated query
+- rspec:47:./spec/unit/dataset_spec.rb:70/ROM::Cassandra::Dataset#batch returns the dataset with updated query
+- rspec:48:./spec/unit/dataset_spec.rb:83/ROM::Cassandra::Dataset#each with a block sends #query to #session and iterates through the result
+- rspec:49:./spec/unit/dataset_spec.rb:92/ROM::Cassandra::Dataset#each without a block sends #query to #session and returns #result's enumerator
+- rspec:50:./spec/unit/dataset_spec.rb:105/ROM::Cassandra::Dataset#respond_to? method defined for #query 
+- rspec:51:./spec/unit/dataset_spec.rb:109/ROM::Cassandra::Dataset#respond_to? method missing for #query 
+- rspec:52:./spec/unit/dataset_spec.rb:119/ROM::Cassandra::Dataset#method_missing forwards calls to the #query
+- rspec:53:./spec/unit/dataset_spec.rb:124/ROM::Cassandra::Dataset#method_missing returns the dataset with updated query
+- rspec:54:./spec/unit/gateway_spec.rb:13/ROM::Cassandra::Gateway.new creates the session with uri
+- rspec:55:./spec/unit/gateway_spec.rb:22/ROM::Cassandra::Gateway#options returns a uri
+- rspec:56:./spec/unit/gateway_spec.rb:30/ROM::Cassandra::Gateway#session is a session
+- rspec:57:./spec/unit/gateway_spec.rb:34/ROM::Cassandra::Gateway#session has a proper uri
+- rspec:58:./spec/unit/gateway_spec.rb:43/ROM::Cassandra::Gateway#[] by default 
+- rspec:59:./spec/unit/gateway_spec.rb:49/ROM::Cassandra::Gateway#[] registered dataset 
+- rspec:60:./spec/unit/gateway_spec.rb:57/ROM::Cassandra::Gateway#dataset? by default 
+- rspec:61:./spec/unit/gateway_spec.rb:63/ROM::Cassandra::Gateway#dataset? registered dataset 
+- rspec:62:./spec/unit/gateway_spec.rb:73/ROM::Cassandra::Gateway#dataset with valid name registers the dataset for given table
+- rspec:63:./spec/unit/gateway_spec.rb:86/ROM::Cassandra::Gateway#dataset with a string name registers the dataset for given table
+- rspec:64:./spec/unit/gateway_spec.rb:94/ROM::Cassandra::Gateway#dataset with invalid name fails
+- rspec:65:./spec/unit/query_spec.rb:8/ROM::Cassandra::Query encapsulates queries
+- rspec:66:./spec/unit/query_spec.rb:12/ROM::Cassandra::Query builds queries
+- rspec:67:./spec/unit/query_spec.rb:16/ROM::Cassandra::Query responds to methods allowed by query
+- rspec:68:./spec/unit/relation_spec.rb:12/ROM::Cassandra::Relation.new 
+- rspec:69:./spec/unit/relation_spec.rb:18/ROM::Cassandra::Relation#source stores the source dataset
+- rspec:70:./spec/unit/relation_spec.rb:26/ROM::Cassandra::Relation#dataset applies #get to the source dataset
+- rspec:71:./spec/unit/relation_spec.rb:37/ROM::Cassandra::Relation#insert_query returns a relation
+- rspec:72:./spec/unit/relation_spec.rb:41/ROM::Cassandra::Relation#insert_query preserves #source
+- rspec:73:./spec/unit/relation_spec.rb:45/ROM::Cassandra::Relation#insert_query sets source.insert as a dataset
+- rspec:74:./spec/unit/relation_spec.rb:56/ROM::Cassandra::Relation#update_query returns a relation
+- rspec:75:./spec/unit/relation_spec.rb:60/ROM::Cassandra::Relation#update_query preserves #source
+- rspec:76:./spec/unit/relation_spec.rb:64/ROM::Cassandra::Relation#update_query sets source.update as a dataset
+- rspec:77:./spec/unit/relation_spec.rb:75/ROM::Cassandra::Relation#delete_query returns a relation
+- rspec:78:./spec/unit/relation_spec.rb:79/ROM::Cassandra::Relation#delete_query preserves #source
+- rspec:79:./spec/unit/relation_spec.rb:83/ROM::Cassandra::Relation#delete_query sets source.delete as a dataset
+- rspec:80:./spec/unit/relation_spec.rb:94/ROM::Cassandra::Relation#batch_query returns a relation
+- rspec:81:./spec/unit/relation_spec.rb:98/ROM::Cassandra::Relation#batch_query preserves #source
+- rspec:82:./spec/unit/relation_spec.rb:102/ROM::Cassandra::Relation#batch_query sets source.batch as a dataset
+- rspec:83:./spec/unit/relation_spec.rb:111/ROM::Cassandra::Relation#respond_to? method, defined for #dataset 
+- rspec:84:./spec/unit/relation_spec.rb:117/ROM::Cassandra::Relation#respond_to? method, not defined for #dataset 
+- rspec:85:./spec/unit/relation_spec.rb:124/ROM::Cassandra::Relation#method_missing forwards call to #dataset
+- rspec:86:./spec/unit/relation_spec.rb:129/ROM::Cassandra::Relation#method_missing returns a relation
+- rspec:87:./spec/unit/relation_spec.rb:133/ROM::Cassandra::Relation#method_missing preserves #source
+- rspec:88:./spec/unit/relation_spec.rb:137/ROM::Cassandra::Relation#method_missing updates dataset
+- rspec:89:./spec/unit/session_spec.rb:13/ROM::Cassandra::Session.new fails with wrong uri
+- rspec:90:./spec/unit/session_spec.rb:22/ROM::Cassandra::Session#uri from hash 
+- rspec:91:./spec/unit/session_spec.rb:28/ROM::Cassandra::Session#uri from nil 
+- rspec:92:./spec/unit/session_spec.rb:34/ROM::Cassandra::Session#uri from string 
+- rspec:93:./spec/unit/session_spec.rb:40/ROM::Cassandra::Session#uri from string and hash 
+- rspec:94:./spec/unit/session_spec.rb:47/ROM::Cassandra::Session#call returns the result of running query
+evil:ROM::Cassandra::Migrator#keyspace:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:63:af8f2
+@@ -1,4 +1,4 @@
+-def keyspace(name)
++def keyspace
+   Query.new.keyspace(name)
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#keyspace:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:63:ff4ff
+@@ -1,4 +1,4 @@
+-def keyspace(name)
++def keyspace(name__mutant__)
+   Query.new.keyspace(name)
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#keyspace:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:63:0ed0e
+@@ -1,4 +1,4 @@
+ def keyspace(name)
+-  Query.new.keyspace(name)
++  self
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#keyspace:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:63:a1787
+@@ -1,4 +1,4 @@
+ def keyspace(name)
+-  Query.new.keyspace(name)
++  nil
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#keyspace:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:63:b640b
+@@ -1,4 +1,3 @@
+ def keyspace(name)
+-  Query.new.keyspace(name)
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#keyspace:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:63:dfeb2
+@@ -1,4 +1,4 @@
+ def keyspace(name)
+-  Query.new.keyspace(name)
++  Query.new
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#keyspace:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:63:e857e
+@@ -1,4 +1,4 @@
+ def keyspace(name)
+-  Query.new.keyspace(name)
++  raise
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#keyspace:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:63:120f0
+@@ -1,4 +1,4 @@
+ def keyspace(name)
+-  Query.new.keyspace(name)
++  name
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#keyspace:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:63:08077
+@@ -1,4 +1,4 @@
+ def keyspace(name)
+-  Query.new.keyspace(name)
++  self.keyspace(name)
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#keyspace:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:63:6ee43
+@@ -1,4 +1,4 @@
+ def keyspace(name)
+-  Query.new.keyspace(name)
++  self.new.keyspace(name)
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#keyspace:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:63:79eb4
+@@ -1,4 +1,4 @@
+ def keyspace(name)
+-  Query.new.keyspace(name)
++  Query.keyspace(name)
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#keyspace:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:63:e9f92
+@@ -1,4 +1,4 @@
+ def keyspace(name)
+-  Query.new.keyspace(name)
++  Query.new.keyspace(nil)
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#keyspace:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:63:ad6f7
+@@ -1,4 +1,4 @@
+ def keyspace(name)
+-  Query.new.keyspace(name)
++  Query.new.keyspace(self)
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#keyspace:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:63:381bf
+@@ -1,4 +1,4 @@
+ def keyspace(name)
+-  Query.new.keyspace(name)
++  Query.new.keyspace
+ end
+-----------------------
+ROM::Cassandra::Migrator#prepare_registry:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:12
+- rspec:7:./spec/unit/commands/batch_spec.rb:12/ROM::Cassandra::Commands::Batch.new 
+- rspec:8:./spec/unit/commands/batch_spec.rb:18/ROM::Cassandra::Commands::Batch#relation restricts dataset by UPDATE statements
+- rspec:9:./spec/unit/commands/batch_spec.rb:26/ROM::Cassandra::Commands::Batch#method_missing returns a command
+- rspec:10:./spec/unit/commands/batch_spec.rb:30/ROM::Cassandra::Commands::Batch#method_missing updates the relation
+- rspec:11:./spec/unit/commands/batch_spec.rb:42/ROM::Cassandra::Commands::Batch#respond_to_missing? method of #relation 
+- rspec:12:./spec/unit/commands/batch_spec.rb:48/ROM::Cassandra::Commands::Batch#respond_to_missing? method not defined for #relation 
+- rspec:13:./spec/unit/commands/batch_spec.rb:59/ROM::Cassandra::Commands::Batch#execute without argument applies #to_a
+- rspec:14:./spec/unit/commands/batch_spec.rb:69/ROM::Cassandra::Commands::Batch#execute with argument updates and finalizes the command
+- rspec:15:./spec/unit/commands/batch_spec.rb:79/ROM::Cassandra::Commands::Batch#keyspace returns query
+- rspec:16:./spec/unit/commands/create_spec.rb:12/ROM::Cassandra::Commands::Create.new 
+- rspec:17:./spec/unit/commands/create_spec.rb:18/ROM::Cassandra::Commands::Create#relation restricts dataset by INSERT statements
+- rspec:18:./spec/unit/commands/create_spec.rb:26/ROM::Cassandra::Commands::Create#method_missing returns a command
+- rspec:19:./spec/unit/commands/create_spec.rb:30/ROM::Cassandra::Commands::Create#method_missing updates the relation
+- rspec:20:./spec/unit/commands/create_spec.rb:42/ROM::Cassandra::Commands::Create#respond_to_missing? method of #relation 
+- rspec:21:./spec/unit/commands/create_spec.rb:48/ROM::Cassandra::Commands::Create#respond_to_missing? method not defined for #relation 
+- rspec:22:./spec/unit/commands/create_spec.rb:59/ROM::Cassandra::Commands::Create#execute without argument applies #to_a
+- rspec:23:./spec/unit/commands/create_spec.rb:69/ROM::Cassandra::Commands::Create#execute with argument updates and finalizes the command
+- rspec:24:./spec/unit/commands/delete_spec.rb:12/ROM::Cassandra::Commands::Delete.new 
+- rspec:25:./spec/unit/commands/delete_spec.rb:18/ROM::Cassandra::Commands::Delete#relation restricts dataset by DELETE statements
+- rspec:26:./spec/unit/commands/delete_spec.rb:26/ROM::Cassandra::Commands::Delete#method_missing returns a command
+- rspec:27:./spec/unit/commands/delete_spec.rb:30/ROM::Cassandra::Commands::Delete#method_missing updates the relation
+- rspec:28:./spec/unit/commands/delete_spec.rb:42/ROM::Cassandra::Commands::Delete#respond_to_missing? method of #relation 
+- rspec:29:./spec/unit/commands/delete_spec.rb:48/ROM::Cassandra::Commands::Delete#respond_to_missing? method not defined for #relation 
+- rspec:30:./spec/unit/commands/delete_spec.rb:59/ROM::Cassandra::Commands::Delete#execute without argument applies #to_a
+- rspec:31:./spec/unit/commands/delete_spec.rb:69/ROM::Cassandra::Commands::Delete#execute with argument updates and finalizes the command
+- rspec:32:./spec/unit/commands/update_spec.rb:12/ROM::Cassandra::Commands::Update.new 
+- rspec:33:./spec/unit/commands/update_spec.rb:18/ROM::Cassandra::Commands::Update#relation restricts dataset by UPDATE statements
+- rspec:34:./spec/unit/commands/update_spec.rb:26/ROM::Cassandra::Commands::Update#method_missing returns a command
+- rspec:35:./spec/unit/commands/update_spec.rb:30/ROM::Cassandra::Commands::Update#method_missing updates the relation
+- rspec:36:./spec/unit/commands/update_spec.rb:42/ROM::Cassandra::Commands::Update#respond_to_missing? method of #relation 
+- rspec:37:./spec/unit/commands/update_spec.rb:48/ROM::Cassandra::Commands::Update#respond_to_missing? method not defined for #relation 
+- rspec:38:./spec/unit/commands/update_spec.rb:59/ROM::Cassandra::Commands::Update#execute without argument applies #to_a
+- rspec:39:./spec/unit/commands/update_spec.rb:69/ROM::Cassandra::Commands::Update#execute with argument updates and finalizes the command
+- rspec:40:./spec/unit/dataset_spec.rb:15/ROM::Cassandra::Dataset#session 
+- rspec:41:./spec/unit/dataset_spec.rb:21/ROM::Cassandra::Dataset#keyspace 
+- rspec:42:./spec/unit/dataset_spec.rb:27/ROM::Cassandra::Dataset#table 
+- rspec:43:./spec/unit/dataset_spec.rb:34/ROM::Cassandra::Dataset#query when it is set 
+- rspec:44:./spec/unit/dataset_spec.rb:40/ROM::Cassandra::Dataset#query when it isn't set returns the context of table
+- rspec:45:./spec/unit/dataset_spec.rb:52/ROM::Cassandra::Dataset#get forwards calls to the #query
+- rspec:46:./spec/unit/dataset_spec.rb:57/ROM::Cassandra::Dataset#get returns the dataset with updated query
+- rspec:47:./spec/unit/dataset_spec.rb:70/ROM::Cassandra::Dataset#batch returns the dataset with updated query
+- rspec:48:./spec/unit/dataset_spec.rb:83/ROM::Cassandra::Dataset#each with a block sends #query to #session and iterates through the result
+- rspec:49:./spec/unit/dataset_spec.rb:92/ROM::Cassandra::Dataset#each without a block sends #query to #session and returns #result's enumerator
+- rspec:50:./spec/unit/dataset_spec.rb:105/ROM::Cassandra::Dataset#respond_to? method defined for #query 
+- rspec:51:./spec/unit/dataset_spec.rb:109/ROM::Cassandra::Dataset#respond_to? method missing for #query 
+- rspec:52:./spec/unit/dataset_spec.rb:119/ROM::Cassandra::Dataset#method_missing forwards calls to the #query
+- rspec:53:./spec/unit/dataset_spec.rb:124/ROM::Cassandra::Dataset#method_missing returns the dataset with updated query
+- rspec:54:./spec/unit/gateway_spec.rb:13/ROM::Cassandra::Gateway.new creates the session with uri
+- rspec:55:./spec/unit/gateway_spec.rb:22/ROM::Cassandra::Gateway#options returns a uri
+- rspec:56:./spec/unit/gateway_spec.rb:30/ROM::Cassandra::Gateway#session is a session
+- rspec:57:./spec/unit/gateway_spec.rb:34/ROM::Cassandra::Gateway#session has a proper uri
+- rspec:58:./spec/unit/gateway_spec.rb:43/ROM::Cassandra::Gateway#[] by default 
+- rspec:59:./spec/unit/gateway_spec.rb:49/ROM::Cassandra::Gateway#[] registered dataset 
+- rspec:60:./spec/unit/gateway_spec.rb:57/ROM::Cassandra::Gateway#dataset? by default 
+- rspec:61:./spec/unit/gateway_spec.rb:63/ROM::Cassandra::Gateway#dataset? registered dataset 
+- rspec:62:./spec/unit/gateway_spec.rb:73/ROM::Cassandra::Gateway#dataset with valid name registers the dataset for given table
+- rspec:63:./spec/unit/gateway_spec.rb:86/ROM::Cassandra::Gateway#dataset with a string name registers the dataset for given table
+- rspec:64:./spec/unit/gateway_spec.rb:94/ROM::Cassandra::Gateway#dataset with invalid name fails
+- rspec:65:./spec/unit/query_spec.rb:8/ROM::Cassandra::Query encapsulates queries
+- rspec:66:./spec/unit/query_spec.rb:12/ROM::Cassandra::Query builds queries
+- rspec:67:./spec/unit/query_spec.rb:16/ROM::Cassandra::Query responds to methods allowed by query
+- rspec:68:./spec/unit/relation_spec.rb:12/ROM::Cassandra::Relation.new 
+- rspec:69:./spec/unit/relation_spec.rb:18/ROM::Cassandra::Relation#source stores the source dataset
+- rspec:70:./spec/unit/relation_spec.rb:26/ROM::Cassandra::Relation#dataset applies #get to the source dataset
+- rspec:71:./spec/unit/relation_spec.rb:37/ROM::Cassandra::Relation#insert_query returns a relation
+- rspec:72:./spec/unit/relation_spec.rb:41/ROM::Cassandra::Relation#insert_query preserves #source
+- rspec:73:./spec/unit/relation_spec.rb:45/ROM::Cassandra::Relation#insert_query sets source.insert as a dataset
+- rspec:74:./spec/unit/relation_spec.rb:56/ROM::Cassandra::Relation#update_query returns a relation
+- rspec:75:./spec/unit/relation_spec.rb:60/ROM::Cassandra::Relation#update_query preserves #source
+- rspec:76:./spec/unit/relation_spec.rb:64/ROM::Cassandra::Relation#update_query sets source.update as a dataset
+- rspec:77:./spec/unit/relation_spec.rb:75/ROM::Cassandra::Relation#delete_query returns a relation
+- rspec:78:./spec/unit/relation_spec.rb:79/ROM::Cassandra::Relation#delete_query preserves #source
+- rspec:79:./spec/unit/relation_spec.rb:83/ROM::Cassandra::Relation#delete_query sets source.delete as a dataset
+- rspec:80:./spec/unit/relation_spec.rb:94/ROM::Cassandra::Relation#batch_query returns a relation
+- rspec:81:./spec/unit/relation_spec.rb:98/ROM::Cassandra::Relation#batch_query preserves #source
+- rspec:82:./spec/unit/relation_spec.rb:102/ROM::Cassandra::Relation#batch_query sets source.batch as a dataset
+- rspec:83:./spec/unit/relation_spec.rb:111/ROM::Cassandra::Relation#respond_to? method, defined for #dataset 
+- rspec:84:./spec/unit/relation_spec.rb:117/ROM::Cassandra::Relation#respond_to? method, not defined for #dataset 
+- rspec:85:./spec/unit/relation_spec.rb:124/ROM::Cassandra::Relation#method_missing forwards call to #dataset
+- rspec:86:./spec/unit/relation_spec.rb:129/ROM::Cassandra::Relation#method_missing returns a relation
+- rspec:87:./spec/unit/relation_spec.rb:133/ROM::Cassandra::Relation#method_missing preserves #source
+- rspec:88:./spec/unit/relation_spec.rb:137/ROM::Cassandra::Relation#method_missing updates dataset
+- rspec:89:./spec/unit/session_spec.rb:13/ROM::Cassandra::Session.new fails with wrong uri
+- rspec:90:./spec/unit/session_spec.rb:22/ROM::Cassandra::Session#uri from hash 
+- rspec:91:./spec/unit/session_spec.rb:28/ROM::Cassandra::Session#uri from nil 
+- rspec:92:./spec/unit/session_spec.rb:34/ROM::Cassandra::Session#uri from string 
+- rspec:93:./spec/unit/session_spec.rb:40/ROM::Cassandra::Session#uri from string and hash 
+- rspec:94:./spec/unit/session_spec.rb:47/ROM::Cassandra::Session#call returns the result of running query
+evil:ROM::Cassandra::Migrator#prepare_registry:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:12:12c61
+@@ -1,5 +1,4 @@
+ def prepare_registry
+-  call("CREATE KEYSPACE IF NOT EXISTS rom WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 3};")
+-  call("CREATE TABLE IF NOT EXISTS rom.migrations (version text, PRIMARY KEY (version));")
++  raise
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#prepare_registry:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:12:81312
+@@ -1,5 +1,3 @@
+ def prepare_registry
+-  call("CREATE KEYSPACE IF NOT EXISTS rom WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 3};")
+-  call("CREATE TABLE IF NOT EXISTS rom.migrations (version text, PRIMARY KEY (version));")
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#prepare_registry:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:12:80825
+@@ -1,5 +1,5 @@
+ def prepare_registry
+-  call("CREATE KEYSPACE IF NOT EXISTS rom WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 3};")
++  self
+   call("CREATE TABLE IF NOT EXISTS rom.migrations (version text, PRIMARY KEY (version));")
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#prepare_registry:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:12:0bf65
+@@ -1,5 +1,5 @@
+ def prepare_registry
+-  call("CREATE KEYSPACE IF NOT EXISTS rom WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 3};")
++  nil
+   call("CREATE TABLE IF NOT EXISTS rom.migrations (version text, PRIMARY KEY (version));")
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#prepare_registry:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:12:d6a68
+@@ -1,5 +1,5 @@
+ def prepare_registry
+-  call("CREATE KEYSPACE IF NOT EXISTS rom WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 3};")
++  call
+   call("CREATE TABLE IF NOT EXISTS rom.migrations (version text, PRIMARY KEY (version));")
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#prepare_registry:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:12:fb859
+@@ -1,5 +1,5 @@
+ def prepare_registry
+-  call("CREATE KEYSPACE IF NOT EXISTS rom WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 3};")
++  "CREATE KEYSPACE IF NOT EXISTS rom WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 3};"
+   call("CREATE TABLE IF NOT EXISTS rom.migrations (version text, PRIMARY KEY (version));")
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#prepare_registry:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:12:fadc4
+@@ -1,5 +1,5 @@
+ def prepare_registry
+-  call("CREATE KEYSPACE IF NOT EXISTS rom WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 3};")
++  call("#{self} {'class': 'SimpleStrategy', 'replication_factor': 3};")
+   call("CREATE TABLE IF NOT EXISTS rom.migrations (version text, PRIMARY KEY (version));")
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#prepare_registry:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:12:34c5d
+@@ -1,5 +1,5 @@
+ def prepare_registry
+-  call("CREATE KEYSPACE IF NOT EXISTS rom WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 3};")
++  call("#{nil} {'class': 'SimpleStrategy', 'replication_factor': 3};")
+   call("CREATE TABLE IF NOT EXISTS rom.migrations (version text, PRIMARY KEY (version));")
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#prepare_registry:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:12:475d1
+@@ -1,5 +1,5 @@
+ def prepare_registry
+-  call("CREATE KEYSPACE IF NOT EXISTS rom WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 3};")
++  call("CREATE KEYSPACE IF NOT EXISTS rom WITH REPLICATION =#{nil}")
+   call("CREATE TABLE IF NOT EXISTS rom.migrations (version text, PRIMARY KEY (version));")
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#prepare_registry:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:12:02b8b
+@@ -1,5 +1,5 @@
+ def prepare_registry
+-  call("CREATE KEYSPACE IF NOT EXISTS rom WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 3};")
++  call(nil)
+   call("CREATE TABLE IF NOT EXISTS rom.migrations (version text, PRIMARY KEY (version));")
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#prepare_registry:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:12:631c4
+@@ -1,5 +1,5 @@
+ def prepare_registry
+-  call("CREATE KEYSPACE IF NOT EXISTS rom WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 3};")
++  call("CREATE KEYSPACE IF NOT EXISTS rom WITH REPLICATION =#{self}")
+   call("CREATE TABLE IF NOT EXISTS rom.migrations (version text, PRIMARY KEY (version));")
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#prepare_registry:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:12:3ed2b
+@@ -1,5 +1,5 @@
+ def prepare_registry
+-  call("CREATE KEYSPACE IF NOT EXISTS rom WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 3};")
++  call(self)
+   call("CREATE TABLE IF NOT EXISTS rom.migrations (version text, PRIMARY KEY (version));")
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#prepare_registry:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:12:7e640
+@@ -1,5 +1,5 @@
+ def prepare_registry
+   call("CREATE KEYSPACE IF NOT EXISTS rom WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 3};")
+-  call("CREATE TABLE IF NOT EXISTS rom.migrations (version text, PRIMARY KEY (version));")
++  nil
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#prepare_registry:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:12:05f35
+@@ -1,5 +1,5 @@
+ def prepare_registry
+   call("CREATE KEYSPACE IF NOT EXISTS rom WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 3};")
+-  call("CREATE TABLE IF NOT EXISTS rom.migrations (version text, PRIMARY KEY (version));")
++  "CREATE TABLE IF NOT EXISTS rom.migrations (version text, PRIMARY KEY (version));"
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#prepare_registry:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:12:2dfab
+@@ -1,5 +1,5 @@
+ def prepare_registry
+   call("CREATE KEYSPACE IF NOT EXISTS rom WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 3};")
+-  call("CREATE TABLE IF NOT EXISTS rom.migrations (version text, PRIMARY KEY (version));")
++  self
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#prepare_registry:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:12:7e7ba
+@@ -1,5 +1,5 @@
+ def prepare_registry
+   call("CREATE KEYSPACE IF NOT EXISTS rom WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 3};")
+-  call("CREATE TABLE IF NOT EXISTS rom.migrations (version text, PRIMARY KEY (version));")
++  call
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#prepare_registry:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:12:bd0c2
+@@ -1,5 +1,5 @@
+ def prepare_registry
+   call("CREATE KEYSPACE IF NOT EXISTS rom WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 3};")
+-  call("CREATE TABLE IF NOT EXISTS rom.migrations (version text, PRIMARY KEY (version));")
++  call("#{nil}(version text, PRIMARY KEY (version));")
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#prepare_registry:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:12:d4a58
+@@ -1,5 +1,5 @@
+ def prepare_registry
+   call("CREATE KEYSPACE IF NOT EXISTS rom WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 3};")
+-  call("CREATE TABLE IF NOT EXISTS rom.migrations (version text, PRIMARY KEY (version));")
++  call("#{self}(version text, PRIMARY KEY (version));")
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#prepare_registry:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:12:6a86d
+@@ -1,5 +1,5 @@
+ def prepare_registry
+   call("CREATE KEYSPACE IF NOT EXISTS rom WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 3};")
+-  call("CREATE TABLE IF NOT EXISTS rom.migrations (version text, PRIMARY KEY (version));")
++  call("CREATE TABLE IF NOT EXISTS rom.migrations #{nil}")
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#prepare_registry:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:12:6e98b
+@@ -1,5 +1,5 @@
+ def prepare_registry
+   call("CREATE KEYSPACE IF NOT EXISTS rom WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 3};")
+-  call("CREATE TABLE IF NOT EXISTS rom.migrations (version text, PRIMARY KEY (version));")
++  call(self)
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#prepare_registry:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:12:e68c6
+@@ -1,5 +1,5 @@
+ def prepare_registry
+   call("CREATE KEYSPACE IF NOT EXISTS rom WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 3};")
+-  call("CREATE TABLE IF NOT EXISTS rom.migrations (version text, PRIMARY KEY (version));")
++  call("CREATE TABLE IF NOT EXISTS rom.migrations #{self}")
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#prepare_registry:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:12:69a57
+@@ -1,5 +1,5 @@
+ def prepare_registry
+   call("CREATE KEYSPACE IF NOT EXISTS rom WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 3};")
+-  call("CREATE TABLE IF NOT EXISTS rom.migrations (version text, PRIMARY KEY (version));")
++  call(nil)
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#prepare_registry:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:12:51763
+@@ -1,5 +1,4 @@
+ def prepare_registry
+   call("CREATE KEYSPACE IF NOT EXISTS rom WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 3};")
+-  call("CREATE TABLE IF NOT EXISTS rom.migrations (version text, PRIMARY KEY (version));")
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#prepare_registry:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:12:72b45
+@@ -1,5 +1,4 @@
+ def prepare_registry
+-  call("CREATE KEYSPACE IF NOT EXISTS rom WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 3};")
+   call("CREATE TABLE IF NOT EXISTS rom.migrations (version text, PRIMARY KEY (version));")
+ end
+-----------------------
+ROM::Cassandra::Migrator#register:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:25
+- rspec:7:./spec/unit/commands/batch_spec.rb:12/ROM::Cassandra::Commands::Batch.new 
+- rspec:8:./spec/unit/commands/batch_spec.rb:18/ROM::Cassandra::Commands::Batch#relation restricts dataset by UPDATE statements
+- rspec:9:./spec/unit/commands/batch_spec.rb:26/ROM::Cassandra::Commands::Batch#method_missing returns a command
+- rspec:10:./spec/unit/commands/batch_spec.rb:30/ROM::Cassandra::Commands::Batch#method_missing updates the relation
+- rspec:11:./spec/unit/commands/batch_spec.rb:42/ROM::Cassandra::Commands::Batch#respond_to_missing? method of #relation 
+- rspec:12:./spec/unit/commands/batch_spec.rb:48/ROM::Cassandra::Commands::Batch#respond_to_missing? method not defined for #relation 
+- rspec:13:./spec/unit/commands/batch_spec.rb:59/ROM::Cassandra::Commands::Batch#execute without argument applies #to_a
+- rspec:14:./spec/unit/commands/batch_spec.rb:69/ROM::Cassandra::Commands::Batch#execute with argument updates and finalizes the command
+- rspec:15:./spec/unit/commands/batch_spec.rb:79/ROM::Cassandra::Commands::Batch#keyspace returns query
+- rspec:16:./spec/unit/commands/create_spec.rb:12/ROM::Cassandra::Commands::Create.new 
+- rspec:17:./spec/unit/commands/create_spec.rb:18/ROM::Cassandra::Commands::Create#relation restricts dataset by INSERT statements
+- rspec:18:./spec/unit/commands/create_spec.rb:26/ROM::Cassandra::Commands::Create#method_missing returns a command
+- rspec:19:./spec/unit/commands/create_spec.rb:30/ROM::Cassandra::Commands::Create#method_missing updates the relation
+- rspec:20:./spec/unit/commands/create_spec.rb:42/ROM::Cassandra::Commands::Create#respond_to_missing? method of #relation 
+- rspec:21:./spec/unit/commands/create_spec.rb:48/ROM::Cassandra::Commands::Create#respond_to_missing? method not defined for #relation 
+- rspec:22:./spec/unit/commands/create_spec.rb:59/ROM::Cassandra::Commands::Create#execute without argument applies #to_a
+- rspec:23:./spec/unit/commands/create_spec.rb:69/ROM::Cassandra::Commands::Create#execute with argument updates and finalizes the command
+- rspec:24:./spec/unit/commands/delete_spec.rb:12/ROM::Cassandra::Commands::Delete.new 
+- rspec:25:./spec/unit/commands/delete_spec.rb:18/ROM::Cassandra::Commands::Delete#relation restricts dataset by DELETE statements
+- rspec:26:./spec/unit/commands/delete_spec.rb:26/ROM::Cassandra::Commands::Delete#method_missing returns a command
+- rspec:27:./spec/unit/commands/delete_spec.rb:30/ROM::Cassandra::Commands::Delete#method_missing updates the relation
+- rspec:28:./spec/unit/commands/delete_spec.rb:42/ROM::Cassandra::Commands::Delete#respond_to_missing? method of #relation 
+- rspec:29:./spec/unit/commands/delete_spec.rb:48/ROM::Cassandra::Commands::Delete#respond_to_missing? method not defined for #relation 
+- rspec:30:./spec/unit/commands/delete_spec.rb:59/ROM::Cassandra::Commands::Delete#execute without argument applies #to_a
+- rspec:31:./spec/unit/commands/delete_spec.rb:69/ROM::Cassandra::Commands::Delete#execute with argument updates and finalizes the command
+- rspec:32:./spec/unit/commands/update_spec.rb:12/ROM::Cassandra::Commands::Update.new 
+- rspec:33:./spec/unit/commands/update_spec.rb:18/ROM::Cassandra::Commands::Update#relation restricts dataset by UPDATE statements
+- rspec:34:./spec/unit/commands/update_spec.rb:26/ROM::Cassandra::Commands::Update#method_missing returns a command
+- rspec:35:./spec/unit/commands/update_spec.rb:30/ROM::Cassandra::Commands::Update#method_missing updates the relation
+- rspec:36:./spec/unit/commands/update_spec.rb:42/ROM::Cassandra::Commands::Update#respond_to_missing? method of #relation 
+- rspec:37:./spec/unit/commands/update_spec.rb:48/ROM::Cassandra::Commands::Update#respond_to_missing? method not defined for #relation 
+- rspec:38:./spec/unit/commands/update_spec.rb:59/ROM::Cassandra::Commands::Update#execute without argument applies #to_a
+- rspec:39:./spec/unit/commands/update_spec.rb:69/ROM::Cassandra::Commands::Update#execute with argument updates and finalizes the command
+- rspec:40:./spec/unit/dataset_spec.rb:15/ROM::Cassandra::Dataset#session 
+- rspec:41:./spec/unit/dataset_spec.rb:21/ROM::Cassandra::Dataset#keyspace 
+- rspec:42:./spec/unit/dataset_spec.rb:27/ROM::Cassandra::Dataset#table 
+- rspec:43:./spec/unit/dataset_spec.rb:34/ROM::Cassandra::Dataset#query when it is set 
+- rspec:44:./spec/unit/dataset_spec.rb:40/ROM::Cassandra::Dataset#query when it isn't set returns the context of table
+- rspec:45:./spec/unit/dataset_spec.rb:52/ROM::Cassandra::Dataset#get forwards calls to the #query
+- rspec:46:./spec/unit/dataset_spec.rb:57/ROM::Cassandra::Dataset#get returns the dataset with updated query
+- rspec:47:./spec/unit/dataset_spec.rb:70/ROM::Cassandra::Dataset#batch returns the dataset with updated query
+- rspec:48:./spec/unit/dataset_spec.rb:83/ROM::Cassandra::Dataset#each with a block sends #query to #session and iterates through the result
+- rspec:49:./spec/unit/dataset_spec.rb:92/ROM::Cassandra::Dataset#each without a block sends #query to #session and returns #result's enumerator
+- rspec:50:./spec/unit/dataset_spec.rb:105/ROM::Cassandra::Dataset#respond_to? method defined for #query 
+- rspec:51:./spec/unit/dataset_spec.rb:109/ROM::Cassandra::Dataset#respond_to? method missing for #query 
+- rspec:52:./spec/unit/dataset_spec.rb:119/ROM::Cassandra::Dataset#method_missing forwards calls to the #query
+- rspec:53:./spec/unit/dataset_spec.rb:124/ROM::Cassandra::Dataset#method_missing returns the dataset with updated query
+- rspec:54:./spec/unit/gateway_spec.rb:13/ROM::Cassandra::Gateway.new creates the session with uri
+- rspec:55:./spec/unit/gateway_spec.rb:22/ROM::Cassandra::Gateway#options returns a uri
+- rspec:56:./spec/unit/gateway_spec.rb:30/ROM::Cassandra::Gateway#session is a session
+- rspec:57:./spec/unit/gateway_spec.rb:34/ROM::Cassandra::Gateway#session has a proper uri
+- rspec:58:./spec/unit/gateway_spec.rb:43/ROM::Cassandra::Gateway#[] by default 
+- rspec:59:./spec/unit/gateway_spec.rb:49/ROM::Cassandra::Gateway#[] registered dataset 
+- rspec:60:./spec/unit/gateway_spec.rb:57/ROM::Cassandra::Gateway#dataset? by default 
+- rspec:61:./spec/unit/gateway_spec.rb:63/ROM::Cassandra::Gateway#dataset? registered dataset 
+- rspec:62:./spec/unit/gateway_spec.rb:73/ROM::Cassandra::Gateway#dataset with valid name registers the dataset for given table
+- rspec:63:./spec/unit/gateway_spec.rb:86/ROM::Cassandra::Gateway#dataset with a string name registers the dataset for given table
+- rspec:64:./spec/unit/gateway_spec.rb:94/ROM::Cassandra::Gateway#dataset with invalid name fails
+- rspec:65:./spec/unit/query_spec.rb:8/ROM::Cassandra::Query encapsulates queries
+- rspec:66:./spec/unit/query_spec.rb:12/ROM::Cassandra::Query builds queries
+- rspec:67:./spec/unit/query_spec.rb:16/ROM::Cassandra::Query responds to methods allowed by query
+- rspec:68:./spec/unit/relation_spec.rb:12/ROM::Cassandra::Relation.new 
+- rspec:69:./spec/unit/relation_spec.rb:18/ROM::Cassandra::Relation#source stores the source dataset
+- rspec:70:./spec/unit/relation_spec.rb:26/ROM::Cassandra::Relation#dataset applies #get to the source dataset
+- rspec:71:./spec/unit/relation_spec.rb:37/ROM::Cassandra::Relation#insert_query returns a relation
+- rspec:72:./spec/unit/relation_spec.rb:41/ROM::Cassandra::Relation#insert_query preserves #source
+- rspec:73:./spec/unit/relation_spec.rb:45/ROM::Cassandra::Relation#insert_query sets source.insert as a dataset
+- rspec:74:./spec/unit/relation_spec.rb:56/ROM::Cassandra::Relation#update_query returns a relation
+- rspec:75:./spec/unit/relation_spec.rb:60/ROM::Cassandra::Relation#update_query preserves #source
+- rspec:76:./spec/unit/relation_spec.rb:64/ROM::Cassandra::Relation#update_query sets source.update as a dataset
+- rspec:77:./spec/unit/relation_spec.rb:75/ROM::Cassandra::Relation#delete_query returns a relation
+- rspec:78:./spec/unit/relation_spec.rb:79/ROM::Cassandra::Relation#delete_query preserves #source
+- rspec:79:./spec/unit/relation_spec.rb:83/ROM::Cassandra::Relation#delete_query sets source.delete as a dataset
+- rspec:80:./spec/unit/relation_spec.rb:94/ROM::Cassandra::Relation#batch_query returns a relation
+- rspec:81:./spec/unit/relation_spec.rb:98/ROM::Cassandra::Relation#batch_query preserves #source
+- rspec:82:./spec/unit/relation_spec.rb:102/ROM::Cassandra::Relation#batch_query sets source.batch as a dataset
+- rspec:83:./spec/unit/relation_spec.rb:111/ROM::Cassandra::Relation#respond_to? method, defined for #dataset 
+- rspec:84:./spec/unit/relation_spec.rb:117/ROM::Cassandra::Relation#respond_to? method, not defined for #dataset 
+- rspec:85:./spec/unit/relation_spec.rb:124/ROM::Cassandra::Relation#method_missing forwards call to #dataset
+- rspec:86:./spec/unit/relation_spec.rb:129/ROM::Cassandra::Relation#method_missing returns a relation
+- rspec:87:./spec/unit/relation_spec.rb:133/ROM::Cassandra::Relation#method_missing preserves #source
+- rspec:88:./spec/unit/relation_spec.rb:137/ROM::Cassandra::Relation#method_missing updates dataset
+- rspec:89:./spec/unit/session_spec.rb:13/ROM::Cassandra::Session.new fails with wrong uri
+- rspec:90:./spec/unit/session_spec.rb:22/ROM::Cassandra::Session#uri from hash 
+- rspec:91:./spec/unit/session_spec.rb:28/ROM::Cassandra::Session#uri from nil 
+- rspec:92:./spec/unit/session_spec.rb:34/ROM::Cassandra::Session#uri from string 
+- rspec:93:./spec/unit/session_spec.rb:40/ROM::Cassandra::Session#uri from string and hash 
+- rspec:94:./spec/unit/session_spec.rb:47/ROM::Cassandra::Session#call returns the result of running query
+evil:ROM::Cassandra::Migrator#register:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:25:d6b68
+@@ -1,4 +1,4 @@
+-def register(number)
++def register
+   call("INSERT INTO rom.migrations (version) VALUES ('#{number}');")
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#register:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:25:04244
+@@ -1,4 +1,4 @@
+-def register(number)
++def register(number__mutant__)
+   call("INSERT INTO rom.migrations (version) VALUES ('#{number}');")
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#register:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:25:11818
+@@ -1,4 +1,4 @@
+ def register(number)
+-  call("INSERT INTO rom.migrations (version) VALUES ('#{number}');")
++  self
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#register:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:25:73727
+@@ -1,4 +1,4 @@
+ def register(number)
+-  call("INSERT INTO rom.migrations (version) VALUES ('#{number}');")
++  raise
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#register:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:25:6fd93
+@@ -1,4 +1,3 @@
+ def register(number)
+-  call("INSERT INTO rom.migrations (version) VALUES ('#{number}');")
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#register:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:25:20fe7
+@@ -1,4 +1,4 @@
+ def register(number)
+-  call("INSERT INTO rom.migrations (version) VALUES ('#{number}');")
++  nil
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#register:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:25:d92ac
+@@ -1,4 +1,4 @@
+ def register(number)
+-  call("INSERT INTO rom.migrations (version) VALUES ('#{number}');")
++  "INSERT INTO rom.migrations (version) VALUES ('#{number}');"
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#register:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:25:bfb69
+@@ -1,4 +1,4 @@
+ def register(number)
+-  call("INSERT INTO rom.migrations (version) VALUES ('#{number}');")
++  call
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#register:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:25:f3461
+@@ -1,4 +1,4 @@
+ def register(number)
+-  call("INSERT INTO rom.migrations (version) VALUES ('#{number}');")
++  call("#{nil}#{number}');")
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#register:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:25:c9627
+@@ -1,4 +1,4 @@
+ def register(number)
+-  call("INSERT INTO rom.migrations (version) VALUES ('#{number}');")
++  call("#{self}#{number}');")
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#register:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:25:1e8bd
+@@ -1,4 +1,4 @@
+ def register(number)
+-  call("INSERT INTO rom.migrations (version) VALUES ('#{number}');")
++  call("INSERT INTO rom.migrations (version) VALUES ('#{self}');")
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#register:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:25:82606
+@@ -1,4 +1,4 @@
+ def register(number)
+-  call("INSERT INTO rom.migrations (version) VALUES ('#{number}');")
++  call("INSERT INTO rom.migrations (version) VALUES ('#{nil}');")
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#register:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:25:4a022
+@@ -1,4 +1,4 @@
+ def register(number)
+-  call("INSERT INTO rom.migrations (version) VALUES ('#{number}');")
++  call("INSERT INTO rom.migrations (version) VALUES ('#{number}#{self}")
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#register:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:25:4ba2d
+@@ -1,4 +1,4 @@
+ def register(number)
+-  call("INSERT INTO rom.migrations (version) VALUES ('#{number}');")
++  call("INSERT INTO rom.migrations (version) VALUES ('#{number}#{nil}")
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#register:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:25:bd834
+@@ -1,4 +1,4 @@
+ def register(number)
+-  call("INSERT INTO rom.migrations (version) VALUES ('#{number}');")
++  call(nil)
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#register:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:25:2fe2e
+@@ -1,4 +1,4 @@
+ def register(number)
+-  call("INSERT INTO rom.migrations (version) VALUES ('#{number}');")
++  call(self)
+ end
+-----------------------
+ROM::Cassandra::Migrator#registered:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:43
+- rspec:7:./spec/unit/commands/batch_spec.rb:12/ROM::Cassandra::Commands::Batch.new 
+- rspec:8:./spec/unit/commands/batch_spec.rb:18/ROM::Cassandra::Commands::Batch#relation restricts dataset by UPDATE statements
+- rspec:9:./spec/unit/commands/batch_spec.rb:26/ROM::Cassandra::Commands::Batch#method_missing returns a command
+- rspec:10:./spec/unit/commands/batch_spec.rb:30/ROM::Cassandra::Commands::Batch#method_missing updates the relation
+- rspec:11:./spec/unit/commands/batch_spec.rb:42/ROM::Cassandra::Commands::Batch#respond_to_missing? method of #relation 
+- rspec:12:./spec/unit/commands/batch_spec.rb:48/ROM::Cassandra::Commands::Batch#respond_to_missing? method not defined for #relation 
+- rspec:13:./spec/unit/commands/batch_spec.rb:59/ROM::Cassandra::Commands::Batch#execute without argument applies #to_a
+- rspec:14:./spec/unit/commands/batch_spec.rb:69/ROM::Cassandra::Commands::Batch#execute with argument updates and finalizes the command
+- rspec:15:./spec/unit/commands/batch_spec.rb:79/ROM::Cassandra::Commands::Batch#keyspace returns query
+- rspec:16:./spec/unit/commands/create_spec.rb:12/ROM::Cassandra::Commands::Create.new 
+- rspec:17:./spec/unit/commands/create_spec.rb:18/ROM::Cassandra::Commands::Create#relation restricts dataset by INSERT statements
+- rspec:18:./spec/unit/commands/create_spec.rb:26/ROM::Cassandra::Commands::Create#method_missing returns a command
+- rspec:19:./spec/unit/commands/create_spec.rb:30/ROM::Cassandra::Commands::Create#method_missing updates the relation
+- rspec:20:./spec/unit/commands/create_spec.rb:42/ROM::Cassandra::Commands::Create#respond_to_missing? method of #relation 
+- rspec:21:./spec/unit/commands/create_spec.rb:48/ROM::Cassandra::Commands::Create#respond_to_missing? method not defined for #relation 
+- rspec:22:./spec/unit/commands/create_spec.rb:59/ROM::Cassandra::Commands::Create#execute without argument applies #to_a
+- rspec:23:./spec/unit/commands/create_spec.rb:69/ROM::Cassandra::Commands::Create#execute with argument updates and finalizes the command
+- rspec:24:./spec/unit/commands/delete_spec.rb:12/ROM::Cassandra::Commands::Delete.new 
+- rspec:25:./spec/unit/commands/delete_spec.rb:18/ROM::Cassandra::Commands::Delete#relation restricts dataset by DELETE statements
+- rspec:26:./spec/unit/commands/delete_spec.rb:26/ROM::Cassandra::Commands::Delete#method_missing returns a command
+- rspec:27:./spec/unit/commands/delete_spec.rb:30/ROM::Cassandra::Commands::Delete#method_missing updates the relation
+- rspec:28:./spec/unit/commands/delete_spec.rb:42/ROM::Cassandra::Commands::Delete#respond_to_missing? method of #relation 
+- rspec:29:./spec/unit/commands/delete_spec.rb:48/ROM::Cassandra::Commands::Delete#respond_to_missing? method not defined for #relation 
+- rspec:30:./spec/unit/commands/delete_spec.rb:59/ROM::Cassandra::Commands::Delete#execute without argument applies #to_a
+- rspec:31:./spec/unit/commands/delete_spec.rb:69/ROM::Cassandra::Commands::Delete#execute with argument updates and finalizes the command
+- rspec:32:./spec/unit/commands/update_spec.rb:12/ROM::Cassandra::Commands::Update.new 
+- rspec:33:./spec/unit/commands/update_spec.rb:18/ROM::Cassandra::Commands::Update#relation restricts dataset by UPDATE statements
+- rspec:34:./spec/unit/commands/update_spec.rb:26/ROM::Cassandra::Commands::Update#method_missing returns a command
+- rspec:35:./spec/unit/commands/update_spec.rb:30/ROM::Cassandra::Commands::Update#method_missing updates the relation
+- rspec:36:./spec/unit/commands/update_spec.rb:42/ROM::Cassandra::Commands::Update#respond_to_missing? method of #relation 
+- rspec:37:./spec/unit/commands/update_spec.rb:48/ROM::Cassandra::Commands::Update#respond_to_missing? method not defined for #relation 
+- rspec:38:./spec/unit/commands/update_spec.rb:59/ROM::Cassandra::Commands::Update#execute without argument applies #to_a
+- rspec:39:./spec/unit/commands/update_spec.rb:69/ROM::Cassandra::Commands::Update#execute with argument updates and finalizes the command
+- rspec:40:./spec/unit/dataset_spec.rb:15/ROM::Cassandra::Dataset#session 
+- rspec:41:./spec/unit/dataset_spec.rb:21/ROM::Cassandra::Dataset#keyspace 
+- rspec:42:./spec/unit/dataset_spec.rb:27/ROM::Cassandra::Dataset#table 
+- rspec:43:./spec/unit/dataset_spec.rb:34/ROM::Cassandra::Dataset#query when it is set 
+- rspec:44:./spec/unit/dataset_spec.rb:40/ROM::Cassandra::Dataset#query when it isn't set returns the context of table
+- rspec:45:./spec/unit/dataset_spec.rb:52/ROM::Cassandra::Dataset#get forwards calls to the #query
+- rspec:46:./spec/unit/dataset_spec.rb:57/ROM::Cassandra::Dataset#get returns the dataset with updated query
+- rspec:47:./spec/unit/dataset_spec.rb:70/ROM::Cassandra::Dataset#batch returns the dataset with updated query
+- rspec:48:./spec/unit/dataset_spec.rb:83/ROM::Cassandra::Dataset#each with a block sends #query to #session and iterates through the result
+- rspec:49:./spec/unit/dataset_spec.rb:92/ROM::Cassandra::Dataset#each without a block sends #query to #session and returns #result's enumerator
+- rspec:50:./spec/unit/dataset_spec.rb:105/ROM::Cassandra::Dataset#respond_to? method defined for #query 
+- rspec:51:./spec/unit/dataset_spec.rb:109/ROM::Cassandra::Dataset#respond_to? method missing for #query 
+- rspec:52:./spec/unit/dataset_spec.rb:119/ROM::Cassandra::Dataset#method_missing forwards calls to the #query
+- rspec:53:./spec/unit/dataset_spec.rb:124/ROM::Cassandra::Dataset#method_missing returns the dataset with updated query
+- rspec:54:./spec/unit/gateway_spec.rb:13/ROM::Cassandra::Gateway.new creates the session with uri
+- rspec:55:./spec/unit/gateway_spec.rb:22/ROM::Cassandra::Gateway#options returns a uri
+- rspec:56:./spec/unit/gateway_spec.rb:30/ROM::Cassandra::Gateway#session is a session
+- rspec:57:./spec/unit/gateway_spec.rb:34/ROM::Cassandra::Gateway#session has a proper uri
+- rspec:58:./spec/unit/gateway_spec.rb:43/ROM::Cassandra::Gateway#[] by default 
+- rspec:59:./spec/unit/gateway_spec.rb:49/ROM::Cassandra::Gateway#[] registered dataset 
+- rspec:60:./spec/unit/gateway_spec.rb:57/ROM::Cassandra::Gateway#dataset? by default 
+- rspec:61:./spec/unit/gateway_spec.rb:63/ROM::Cassandra::Gateway#dataset? registered dataset 
+- rspec:62:./spec/unit/gateway_spec.rb:73/ROM::Cassandra::Gateway#dataset with valid name registers the dataset for given table
+- rspec:63:./spec/unit/gateway_spec.rb:86/ROM::Cassandra::Gateway#dataset with a string name registers the dataset for given table
+- rspec:64:./spec/unit/gateway_spec.rb:94/ROM::Cassandra::Gateway#dataset with invalid name fails
+- rspec:65:./spec/unit/query_spec.rb:8/ROM::Cassandra::Query encapsulates queries
+- rspec:66:./spec/unit/query_spec.rb:12/ROM::Cassandra::Query builds queries
+- rspec:67:./spec/unit/query_spec.rb:16/ROM::Cassandra::Query responds to methods allowed by query
+- rspec:68:./spec/unit/relation_spec.rb:12/ROM::Cassandra::Relation.new 
+- rspec:69:./spec/unit/relation_spec.rb:18/ROM::Cassandra::Relation#source stores the source dataset
+- rspec:70:./spec/unit/relation_spec.rb:26/ROM::Cassandra::Relation#dataset applies #get to the source dataset
+- rspec:71:./spec/unit/relation_spec.rb:37/ROM::Cassandra::Relation#insert_query returns a relation
+- rspec:72:./spec/unit/relation_spec.rb:41/ROM::Cassandra::Relation#insert_query preserves #source
+- rspec:73:./spec/unit/relation_spec.rb:45/ROM::Cassandra::Relation#insert_query sets source.insert as a dataset
+- rspec:74:./spec/unit/relation_spec.rb:56/ROM::Cassandra::Relation#update_query returns a relation
+- rspec:75:./spec/unit/relation_spec.rb:60/ROM::Cassandra::Relation#update_query preserves #source
+- rspec:76:./spec/unit/relation_spec.rb:64/ROM::Cassandra::Relation#update_query sets source.update as a dataset
+- rspec:77:./spec/unit/relation_spec.rb:75/ROM::Cassandra::Relation#delete_query returns a relation
+- rspec:78:./spec/unit/relation_spec.rb:79/ROM::Cassandra::Relation#delete_query preserves #source
+- rspec:79:./spec/unit/relation_spec.rb:83/ROM::Cassandra::Relation#delete_query sets source.delete as a dataset
+- rspec:80:./spec/unit/relation_spec.rb:94/ROM::Cassandra::Relation#batch_query returns a relation
+- rspec:81:./spec/unit/relation_spec.rb:98/ROM::Cassandra::Relation#batch_query preserves #source
+- rspec:82:./spec/unit/relation_spec.rb:102/ROM::Cassandra::Relation#batch_query sets source.batch as a dataset
+- rspec:83:./spec/unit/relation_spec.rb:111/ROM::Cassandra::Relation#respond_to? method, defined for #dataset 
+- rspec:84:./spec/unit/relation_spec.rb:117/ROM::Cassandra::Relation#respond_to? method, not defined for #dataset 
+- rspec:85:./spec/unit/relation_spec.rb:124/ROM::Cassandra::Relation#method_missing forwards call to #dataset
+- rspec:86:./spec/unit/relation_spec.rb:129/ROM::Cassandra::Relation#method_missing returns a relation
+- rspec:87:./spec/unit/relation_spec.rb:133/ROM::Cassandra::Relation#method_missing preserves #source
+- rspec:88:./spec/unit/relation_spec.rb:137/ROM::Cassandra::Relation#method_missing updates dataset
+- rspec:89:./spec/unit/session_spec.rb:13/ROM::Cassandra::Session.new fails with wrong uri
+- rspec:90:./spec/unit/session_spec.rb:22/ROM::Cassandra::Session#uri from hash 
+- rspec:91:./spec/unit/session_spec.rb:28/ROM::Cassandra::Session#uri from nil 
+- rspec:92:./spec/unit/session_spec.rb:34/ROM::Cassandra::Session#uri from string 
+- rspec:93:./spec/unit/session_spec.rb:40/ROM::Cassandra::Session#uri from string and hash 
+- rspec:94:./spec/unit/session_spec.rb:47/ROM::Cassandra::Session#call returns the result of running query
+evil:ROM::Cassandra::Migrator#registered:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:43:70fab
+@@ -1,6 +1,3 @@
+ def registered
+-  call("SELECT version FROM rom.migrations;").map do |item|
+-    item["version"]
+-  end
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#registered:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:43:fcd90
+@@ -1,6 +1,4 @@
+ def registered
+-  call("SELECT version FROM rom.migrations;").map do |item|
+-    item["version"]
+-  end
++  raise
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#registered:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:43:b7808
+@@ -1,6 +1,4 @@
+ def registered
+-  call("SELECT version FROM rom.migrations;").map do |item|
+-    item["version"]
+-  end
++  nil
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#registered:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:43:ff828
+@@ -1,6 +1,4 @@
+ def registered
+-  call("SELECT version FROM rom.migrations;").map do |item|
+-    item["version"]
+-  end
++  call("SELECT version FROM rom.migrations;").map
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#registered:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:43:909ec
+@@ -1,6 +1,4 @@
+ def registered
+-  call("SELECT version FROM rom.migrations;").map do |item|
+-    item["version"]
+-  end
++  self
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#registered:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:43:a7d31
+@@ -1,6 +1,6 @@
+ def registered
+-  call("SELECT version FROM rom.migrations;").map do |item|
++  call("SELECT version FROM rom.migrations;") do |item|
+     item["version"]
+   end
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#registered:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:43:76903
+@@ -1,6 +1,6 @@
+ def registered
+-  call("SELECT version FROM rom.migrations;").map do |item|
++  call("SELECT version FROM rom.migrations;").each do |item|
+     item["version"]
+   end
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#registered:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:43:d6b4e
+@@ -1,6 +1,6 @@
+ def registered
+-  call("SELECT version FROM rom.migrations;").map do |item|
++  self.map do |item|
+     item["version"]
+   end
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#registered:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:43:45666
+@@ -1,6 +1,6 @@
+ def registered
+-  call("SELECT version FROM rom.migrations;").map do |item|
++  call.map do |item|
+     item["version"]
+   end
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#registered:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:43:0adcc
+@@ -1,6 +1,6 @@
+ def registered
+-  call("SELECT version FROM rom.migrations;").map do |item|
++  "SELECT version FROM rom.migrations;".map do |item|
+     item["version"]
+   end
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#registered:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:43:1e0c1
+@@ -1,6 +1,6 @@
+ def registered
+-  call("SELECT version FROM rom.migrations;").map do |item|
++  call(self).map do |item|
+     item["version"]
+   end
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#registered:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:43:2ae6e
+@@ -1,6 +1,6 @@
+ def registered
+-  call("SELECT version FROM rom.migrations;").map do |item|
++  call(nil).map do |item|
+     item["version"]
+   end
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#registered:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:43:fb5b7
+@@ -1,6 +1,6 @@
+ def registered
+-  call("SELECT version FROM rom.migrations;").map do |item|
++  call("SELECT version FROM rom.migrations;").map do
+     item["version"]
+   end
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#registered:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:43:9d98e
+@@ -1,6 +1,6 @@
+ def registered
+-  call("SELECT version FROM rom.migrations;").map do |item|
++  call("SELECT version FROM rom.migrations;").map do |item__mutant__|
+     item["version"]
+   end
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#registered:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:43:86d77
+@@ -1,6 +1,5 @@
+ def registered
+   call("SELECT version FROM rom.migrations;").map do |item|
+-    item["version"]
+   end
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#registered:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:43:ede32
+@@ -1,6 +1,4 @@
+ def registered
+-  call("SELECT version FROM rom.migrations;").map do |item|
+-    item["version"]
+-  end
++  item["version"]
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#registered:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:43:20b88
+@@ -1,6 +1,6 @@
+ def registered
+   call("SELECT version FROM rom.migrations;").map do |item|
+-    item["version"]
++    raise
+   end
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#registered:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:43:98258
+@@ -1,6 +1,6 @@
+ def registered
+   call("SELECT version FROM rom.migrations;").map do |item|
+-    item["version"]
++    nil
+   end
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#registered:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:43:62ca7
+@@ -1,6 +1,6 @@
+ def registered
+   call("SELECT version FROM rom.migrations;").map do |item|
+-    item["version"]
++    item
+   end
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#registered:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:43:7ef0e
+@@ -1,6 +1,6 @@
+ def registered
+   call("SELECT version FROM rom.migrations;").map do |item|
+-    item["version"]
++    self
+   end
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#registered:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:43:4c68e
+@@ -1,6 +1,6 @@
+ def registered
+   call("SELECT version FROM rom.migrations;").map do |item|
+-    item["version"]
++    item.at("version")
+   end
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#registered:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:43:da676
+@@ -1,6 +1,6 @@
+ def registered
+   call("SELECT version FROM rom.migrations;").map do |item|
+-    item["version"]
++    item.fetch("version")
+   end
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#registered:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:43:b40d4
+@@ -1,6 +1,6 @@
+ def registered
+   call("SELECT version FROM rom.migrations;").map do |item|
+-    item["version"]
++    "version"
+   end
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#registered:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:43:534b5
+@@ -1,6 +1,6 @@
+ def registered
+   call("SELECT version FROM rom.migrations;").map do |item|
+-    item["version"]
++    item[]
+   end
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#registered:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:43:fd8b2
+@@ -1,6 +1,6 @@
+ def registered
+   call("SELECT version FROM rom.migrations;").map do |item|
+-    item["version"]
++    self["version"]
+   end
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#registered:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:43:18f5b
+@@ -1,6 +1,6 @@
+ def registered
+   call("SELECT version FROM rom.migrations;").map do |item|
+-    item["version"]
++    item[self]
+   end
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#registered:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:43:9f5fd
+@@ -1,6 +1,6 @@
+ def registered
+   call("SELECT version FROM rom.migrations;").map do |item|
+-    item["version"]
++    item[nil]
+   end
+ end
+-----------------------
+ROM::Cassandra::Migrator#unregister:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:35
+- rspec:7:./spec/unit/commands/batch_spec.rb:12/ROM::Cassandra::Commands::Batch.new 
+- rspec:8:./spec/unit/commands/batch_spec.rb:18/ROM::Cassandra::Commands::Batch#relation restricts dataset by UPDATE statements
+- rspec:9:./spec/unit/commands/batch_spec.rb:26/ROM::Cassandra::Commands::Batch#method_missing returns a command
+- rspec:10:./spec/unit/commands/batch_spec.rb:30/ROM::Cassandra::Commands::Batch#method_missing updates the relation
+- rspec:11:./spec/unit/commands/batch_spec.rb:42/ROM::Cassandra::Commands::Batch#respond_to_missing? method of #relation 
+- rspec:12:./spec/unit/commands/batch_spec.rb:48/ROM::Cassandra::Commands::Batch#respond_to_missing? method not defined for #relation 
+- rspec:13:./spec/unit/commands/batch_spec.rb:59/ROM::Cassandra::Commands::Batch#execute without argument applies #to_a
+- rspec:14:./spec/unit/commands/batch_spec.rb:69/ROM::Cassandra::Commands::Batch#execute with argument updates and finalizes the command
+- rspec:15:./spec/unit/commands/batch_spec.rb:79/ROM::Cassandra::Commands::Batch#keyspace returns query
+- rspec:16:./spec/unit/commands/create_spec.rb:12/ROM::Cassandra::Commands::Create.new 
+- rspec:17:./spec/unit/commands/create_spec.rb:18/ROM::Cassandra::Commands::Create#relation restricts dataset by INSERT statements
+- rspec:18:./spec/unit/commands/create_spec.rb:26/ROM::Cassandra::Commands::Create#method_missing returns a command
+- rspec:19:./spec/unit/commands/create_spec.rb:30/ROM::Cassandra::Commands::Create#method_missing updates the relation
+- rspec:20:./spec/unit/commands/create_spec.rb:42/ROM::Cassandra::Commands::Create#respond_to_missing? method of #relation 
+- rspec:21:./spec/unit/commands/create_spec.rb:48/ROM::Cassandra::Commands::Create#respond_to_missing? method not defined for #relation 
+- rspec:22:./spec/unit/commands/create_spec.rb:59/ROM::Cassandra::Commands::Create#execute without argument applies #to_a
+- rspec:23:./spec/unit/commands/create_spec.rb:69/ROM::Cassandra::Commands::Create#execute with argument updates and finalizes the command
+- rspec:24:./spec/unit/commands/delete_spec.rb:12/ROM::Cassandra::Commands::Delete.new 
+- rspec:25:./spec/unit/commands/delete_spec.rb:18/ROM::Cassandra::Commands::Delete#relation restricts dataset by DELETE statements
+- rspec:26:./spec/unit/commands/delete_spec.rb:26/ROM::Cassandra::Commands::Delete#method_missing returns a command
+- rspec:27:./spec/unit/commands/delete_spec.rb:30/ROM::Cassandra::Commands::Delete#method_missing updates the relation
+- rspec:28:./spec/unit/commands/delete_spec.rb:42/ROM::Cassandra::Commands::Delete#respond_to_missing? method of #relation 
+- rspec:29:./spec/unit/commands/delete_spec.rb:48/ROM::Cassandra::Commands::Delete#respond_to_missing? method not defined for #relation 
+- rspec:30:./spec/unit/commands/delete_spec.rb:59/ROM::Cassandra::Commands::Delete#execute without argument applies #to_a
+- rspec:31:./spec/unit/commands/delete_spec.rb:69/ROM::Cassandra::Commands::Delete#execute with argument updates and finalizes the command
+- rspec:32:./spec/unit/commands/update_spec.rb:12/ROM::Cassandra::Commands::Update.new 
+- rspec:33:./spec/unit/commands/update_spec.rb:18/ROM::Cassandra::Commands::Update#relation restricts dataset by UPDATE statements
+- rspec:34:./spec/unit/commands/update_spec.rb:26/ROM::Cassandra::Commands::Update#method_missing returns a command
+- rspec:35:./spec/unit/commands/update_spec.rb:30/ROM::Cassandra::Commands::Update#method_missing updates the relation
+- rspec:36:./spec/unit/commands/update_spec.rb:42/ROM::Cassandra::Commands::Update#respond_to_missing? method of #relation 
+- rspec:37:./spec/unit/commands/update_spec.rb:48/ROM::Cassandra::Commands::Update#respond_to_missing? method not defined for #relation 
+- rspec:38:./spec/unit/commands/update_spec.rb:59/ROM::Cassandra::Commands::Update#execute without argument applies #to_a
+- rspec:39:./spec/unit/commands/update_spec.rb:69/ROM::Cassandra::Commands::Update#execute with argument updates and finalizes the command
+- rspec:40:./spec/unit/dataset_spec.rb:15/ROM::Cassandra::Dataset#session 
+- rspec:41:./spec/unit/dataset_spec.rb:21/ROM::Cassandra::Dataset#keyspace 
+- rspec:42:./spec/unit/dataset_spec.rb:27/ROM::Cassandra::Dataset#table 
+- rspec:43:./spec/unit/dataset_spec.rb:34/ROM::Cassandra::Dataset#query when it is set 
+- rspec:44:./spec/unit/dataset_spec.rb:40/ROM::Cassandra::Dataset#query when it isn't set returns the context of table
+- rspec:45:./spec/unit/dataset_spec.rb:52/ROM::Cassandra::Dataset#get forwards calls to the #query
+- rspec:46:./spec/unit/dataset_spec.rb:57/ROM::Cassandra::Dataset#get returns the dataset with updated query
+- rspec:47:./spec/unit/dataset_spec.rb:70/ROM::Cassandra::Dataset#batch returns the dataset with updated query
+- rspec:48:./spec/unit/dataset_spec.rb:83/ROM::Cassandra::Dataset#each with a block sends #query to #session and iterates through the result
+- rspec:49:./spec/unit/dataset_spec.rb:92/ROM::Cassandra::Dataset#each without a block sends #query to #session and returns #result's enumerator
+- rspec:50:./spec/unit/dataset_spec.rb:105/ROM::Cassandra::Dataset#respond_to? method defined for #query 
+- rspec:51:./spec/unit/dataset_spec.rb:109/ROM::Cassandra::Dataset#respond_to? method missing for #query 
+- rspec:52:./spec/unit/dataset_spec.rb:119/ROM::Cassandra::Dataset#method_missing forwards calls to the #query
+- rspec:53:./spec/unit/dataset_spec.rb:124/ROM::Cassandra::Dataset#method_missing returns the dataset with updated query
+- rspec:54:./spec/unit/gateway_spec.rb:13/ROM::Cassandra::Gateway.new creates the session with uri
+- rspec:55:./spec/unit/gateway_spec.rb:22/ROM::Cassandra::Gateway#options returns a uri
+- rspec:56:./spec/unit/gateway_spec.rb:30/ROM::Cassandra::Gateway#session is a session
+- rspec:57:./spec/unit/gateway_spec.rb:34/ROM::Cassandra::Gateway#session has a proper uri
+- rspec:58:./spec/unit/gateway_spec.rb:43/ROM::Cassandra::Gateway#[] by default 
+- rspec:59:./spec/unit/gateway_spec.rb:49/ROM::Cassandra::Gateway#[] registered dataset 
+- rspec:60:./spec/unit/gateway_spec.rb:57/ROM::Cassandra::Gateway#dataset? by default 
+- rspec:61:./spec/unit/gateway_spec.rb:63/ROM::Cassandra::Gateway#dataset? registered dataset 
+- rspec:62:./spec/unit/gateway_spec.rb:73/ROM::Cassandra::Gateway#dataset with valid name registers the dataset for given table
+- rspec:63:./spec/unit/gateway_spec.rb:86/ROM::Cassandra::Gateway#dataset with a string name registers the dataset for given table
+- rspec:64:./spec/unit/gateway_spec.rb:94/ROM::Cassandra::Gateway#dataset with invalid name fails
+- rspec:65:./spec/unit/query_spec.rb:8/ROM::Cassandra::Query encapsulates queries
+- rspec:66:./spec/unit/query_spec.rb:12/ROM::Cassandra::Query builds queries
+- rspec:67:./spec/unit/query_spec.rb:16/ROM::Cassandra::Query responds to methods allowed by query
+- rspec:68:./spec/unit/relation_spec.rb:12/ROM::Cassandra::Relation.new 
+- rspec:69:./spec/unit/relation_spec.rb:18/ROM::Cassandra::Relation#source stores the source dataset
+- rspec:70:./spec/unit/relation_spec.rb:26/ROM::Cassandra::Relation#dataset applies #get to the source dataset
+- rspec:71:./spec/unit/relation_spec.rb:37/ROM::Cassandra::Relation#insert_query returns a relation
+- rspec:72:./spec/unit/relation_spec.rb:41/ROM::Cassandra::Relation#insert_query preserves #source
+- rspec:73:./spec/unit/relation_spec.rb:45/ROM::Cassandra::Relation#insert_query sets source.insert as a dataset
+- rspec:74:./spec/unit/relation_spec.rb:56/ROM::Cassandra::Relation#update_query returns a relation
+- rspec:75:./spec/unit/relation_spec.rb:60/ROM::Cassandra::Relation#update_query preserves #source
+- rspec:76:./spec/unit/relation_spec.rb:64/ROM::Cassandra::Relation#update_query sets source.update as a dataset
+- rspec:77:./spec/unit/relation_spec.rb:75/ROM::Cassandra::Relation#delete_query returns a relation
+- rspec:78:./spec/unit/relation_spec.rb:79/ROM::Cassandra::Relation#delete_query preserves #source
+- rspec:79:./spec/unit/relation_spec.rb:83/ROM::Cassandra::Relation#delete_query sets source.delete as a dataset
+- rspec:80:./spec/unit/relation_spec.rb:94/ROM::Cassandra::Relation#batch_query returns a relation
+- rspec:81:./spec/unit/relation_spec.rb:98/ROM::Cassandra::Relation#batch_query preserves #source
+- rspec:82:./spec/unit/relation_spec.rb:102/ROM::Cassandra::Relation#batch_query sets source.batch as a dataset
+- rspec:83:./spec/unit/relation_spec.rb:111/ROM::Cassandra::Relation#respond_to? method, defined for #dataset 
+- rspec:84:./spec/unit/relation_spec.rb:117/ROM::Cassandra::Relation#respond_to? method, not defined for #dataset 
+- rspec:85:./spec/unit/relation_spec.rb:124/ROM::Cassandra::Relation#method_missing forwards call to #dataset
+- rspec:86:./spec/unit/relation_spec.rb:129/ROM::Cassandra::Relation#method_missing returns a relation
+- rspec:87:./spec/unit/relation_spec.rb:133/ROM::Cassandra::Relation#method_missing preserves #source
+- rspec:88:./spec/unit/relation_spec.rb:137/ROM::Cassandra::Relation#method_missing updates dataset
+- rspec:89:./spec/unit/session_spec.rb:13/ROM::Cassandra::Session.new fails with wrong uri
+- rspec:90:./spec/unit/session_spec.rb:22/ROM::Cassandra::Session#uri from hash 
+- rspec:91:./spec/unit/session_spec.rb:28/ROM::Cassandra::Session#uri from nil 
+- rspec:92:./spec/unit/session_spec.rb:34/ROM::Cassandra::Session#uri from string 
+- rspec:93:./spec/unit/session_spec.rb:40/ROM::Cassandra::Session#uri from string and hash 
+- rspec:94:./spec/unit/session_spec.rb:47/ROM::Cassandra::Session#call returns the result of running query
+evil:ROM::Cassandra::Migrator#unregister:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:35:93e7c
+@@ -1,4 +1,4 @@
+-def unregister(number)
++def unregister
+   call("DELETE FROM rom.migrations WHERE version = '#{number}';")
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#unregister:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:35:ac3d3
+@@ -1,4 +1,4 @@
+-def unregister(number)
++def unregister(number__mutant__)
+   call("DELETE FROM rom.migrations WHERE version = '#{number}';")
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#unregister:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:35:8ad27
+@@ -1,4 +1,4 @@
+ def unregister(number)
+-  call("DELETE FROM rom.migrations WHERE version = '#{number}';")
++  raise
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#unregister:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:35:1b323
+@@ -1,4 +1,3 @@
+ def unregister(number)
+-  call("DELETE FROM rom.migrations WHERE version = '#{number}';")
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#unregister:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:35:cfd97
+@@ -1,4 +1,4 @@
+ def unregister(number)
+-  call("DELETE FROM rom.migrations WHERE version = '#{number}';")
++  nil
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#unregister:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:35:98e4a
+@@ -1,4 +1,4 @@
+ def unregister(number)
+-  call("DELETE FROM rom.migrations WHERE version = '#{number}';")
++  "DELETE FROM rom.migrations WHERE version = '#{number}';"
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#unregister:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:35:c829b
+@@ -1,4 +1,4 @@
+ def unregister(number)
+-  call("DELETE FROM rom.migrations WHERE version = '#{number}';")
++  self
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#unregister:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:35:6371d
+@@ -1,4 +1,4 @@
+ def unregister(number)
+-  call("DELETE FROM rom.migrations WHERE version = '#{number}';")
++  call
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#unregister:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:35:5507c
+@@ -1,4 +1,4 @@
+ def unregister(number)
+-  call("DELETE FROM rom.migrations WHERE version = '#{number}';")
++  call("#{nil}#{number}';")
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#unregister:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:35:d5b4f
+@@ -1,4 +1,4 @@
+ def unregister(number)
+-  call("DELETE FROM rom.migrations WHERE version = '#{number}';")
++  call("#{self}#{number}';")
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#unregister:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:35:66160
+@@ -1,4 +1,4 @@
+ def unregister(number)
+-  call("DELETE FROM rom.migrations WHERE version = '#{number}';")
++  call("DELETE FROM rom.migrations WHERE version = '#{nil}';")
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#unregister:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:35:0f65d
+@@ -1,4 +1,4 @@
+ def unregister(number)
+-  call("DELETE FROM rom.migrations WHERE version = '#{number}';")
++  call("DELETE FROM rom.migrations WHERE version = '#{self}';")
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#unregister:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:35:4d58d
+@@ -1,4 +1,4 @@
+ def unregister(number)
+-  call("DELETE FROM rom.migrations WHERE version = '#{number}';")
++  call("DELETE FROM rom.migrations WHERE version = '#{number}#{nil}")
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#unregister:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:35:9fd12
+@@ -1,4 +1,4 @@
+ def unregister(number)
+-  call("DELETE FROM rom.migrations WHERE version = '#{number}';")
++  call("DELETE FROM rom.migrations WHERE version = '#{number}#{self}")
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#unregister:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:35:97230
+@@ -1,4 +1,4 @@
+ def unregister(number)
+-  call("DELETE FROM rom.migrations WHERE version = '#{number}';")
++  call(nil)
+ end
+-----------------------
+evil:ROM::Cassandra::Migrator#unregister:/home/nepalez/dev/ruby/rom/rom-cassandra/lib/rom/cassandra/migrator.rb:35:cf854
+@@ -1,4 +1,4 @@
+ def unregister(number)
+-  call("DELETE FROM rom.migrations WHERE version = '#{number}';")
++  call(self)
+ end
+-----------------------
+Mutant configuration:
+Matcher:         #<Mutant::Matcher::Config match_expressions: [ROM::Cassandra*] ignore_expressions: [ROM::Cassandra::Migrator]>
+Integration:     Mutant::Integration::Rspec
+Expect Coverage: 100.00%
+Jobs:            8
+Includes:        []
+Requires:        ["rom-cassandra"]
+Subjects:        44
+Mutations:       1069
+Kills:           915
+Alive:           154
+Runtime:         49.20s
+Killtime:        226.12s
+Overhead:        -78.24%
+Coverage:        85.59%
+Expected:        100.00%

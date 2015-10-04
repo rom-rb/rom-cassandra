@@ -6,6 +6,12 @@ describe ROM::Cassandra::Commands::Create do
   let(:relation) { double :relation, insert_query: insert }
   let(:insert)   { double :insert, foo: :updated_relation }
 
+  describe ".adapter" do
+    subject { described_class.adapter }
+
+    it { is_expected.to eql :cassandra }
+  end # describe .adapter
+
   describe ".new" do
     subject { command }
 

@@ -1,3 +1,15 @@
+## v0.1.0 to be released
+
+### Changed (backward-incompatible)
+
+* Switched to 'rom-migrator' implementation of migrations (nepalez)
+
+### Deleted
+
+* Rake task for migration to be implemented in 'rom-migrator' (nepalez)
+
+[Compare v0.0.2...v0.1.0](https://github.com/rom-rb/rom-cassandra/compare/v0.0.2...v0.1.0)
+
 ## v0.0.2 2015-09-08
 
 ### Changed

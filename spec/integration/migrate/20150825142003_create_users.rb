@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class CreateUsers < ROM::Cassandra::Migrations::Migration
+class CreateUsers < ROM::Migrator::Migration
   def up
     replication = { class: :SimpleStrategy, replication_factor: 1 }
 

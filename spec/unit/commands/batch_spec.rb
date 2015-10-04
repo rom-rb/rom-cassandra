@@ -6,6 +6,12 @@ describe ROM::Cassandra::Commands::Batch do
   let(:relation) { double :relation, batch_query: batch }
   let(:batch)    { double :batch, foo: :updated_relation }
 
+  describe ".adapter" do
+    subject { described_class.adapter }
+
+    it { is_expected.to eql :cassandra }
+  end # describe .adapter
+
   describe ".new" do
     subject { command }
 

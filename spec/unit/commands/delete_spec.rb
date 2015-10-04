@@ -6,6 +6,12 @@ describe ROM::Cassandra::Commands::Delete do
   let(:relation) { double :relation, delete_query: delete }
   let(:delete)   { double :delete, foo: :updated_relation }
 
+  describe ".adapter" do
+    subject { described_class.adapter }
+
+    it { is_expected.to eql :cassandra }
+  end # describe .adapter
+
   describe ".new" do
     subject { command }
 

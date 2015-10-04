@@ -6,6 +6,12 @@ describe ROM::Cassandra::Commands::Update do
   let(:relation) { double :relation, update_query: update }
   let(:update)   { double :update, foo: :updated_relation }
 
+  describe ".adapter" do
+    subject { described_class.adapter }
+
+    it { is_expected.to eql :cassandra }
+  end # describe .adapter
+
   describe ".new" do
     subject { command }
 
