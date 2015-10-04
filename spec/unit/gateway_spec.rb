@@ -36,6 +36,19 @@ describe ROM::Cassandra::Gateway do
     end
   end # describe #session
 
+  describe "#call" do
+    subject { gateway.call(:foo) }
+
+    let(:session) { double :session, call: [:bar] }
+
+    it "is forwarded to #session" do
+      allow(gateway).to receive(:session) { session }
+
+      expect(session).to receive(:call).with(:foo)
+      expect(subject).to eql session.call
+    end
+  end # describe #call
+
   describe "#[]" do
     subject { gateway["foo.bar"] }
 
@@ -74,7 +87,7 @@ describe ROM::Cassandra::Gateway do
         subject
         dataset = gateway["foo.bar"]
 
-        expect(dataset.session).to eql(gateway.session)
+        expect(dataset.gateway).to eql(gateway)
         expect(dataset.keyspace).to eql :foo
         expect(dataset.table).to eql :bar
       end

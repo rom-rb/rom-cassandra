@@ -2,18 +2,18 @@
 
 describe ROM::Cassandra::Dataset do
 
-  let(:dataset)  { described_class.new(session, keyspace, table, query) }
+  let(:dataset)  { described_class.new(gateway, keyspace, table, query) }
 
-  let(:session)  { double :session }
+  let(:gateway)  { double :gateway }
   let(:keyspace) { "foo" }
   let(:table)    { "bar" }
   let(:query)    { double :query }
 
-  describe "#session" do
-    subject { dataset.session }
+  describe "#gateway" do
+    subject { dataset.gateway }
 
-    it { is_expected.to eql session }
-  end # describe #session
+    it { is_expected.to eql gateway }
+  end # describe #gateway
 
   describe "#keyspace" do
     subject { dataset.keyspace }
@@ -35,7 +35,7 @@ describe ROM::Cassandra::Dataset do
     end
 
     context "when it isn't set" do
-      let(:dataset)  { described_class.new(session, keyspace, table) }
+      let(:dataset)  { described_class.new(gateway, keyspace, table) }
 
       it "returns the context of table" do
         expect(subject.select.to_s).to eql "SELECT * FROM foo.bar;"
@@ -56,7 +56,7 @@ describe ROM::Cassandra::Dataset do
 
     it "returns the dataset with updated query" do
       expect(subject)
-        .to eql described_class.new(session, keyspace, table, select)
+        .to eql described_class.new(gateway, keyspace, table, select)
     end
   end # describe #get
 
@@ -69,19 +69,19 @@ describe ROM::Cassandra::Dataset do
 
     it "returns the dataset with updated query" do
       expect(subject)
-        .to eql described_class.new(session, nil, nil, batch)
+        .to eql described_class.new(gateway, nil, nil, batch)
     end
   end # describe #batch
 
   describe "#each" do
     let(:result) { [:foo, :bar] }
-    before { allow(session).to receive(:call) { result } }
+    before { allow(gateway).to receive(:call) { result } }
 
     context "with a block" do
       subject { dataset.map { |item| item } }
 
-      it "sends #query to #session and iterates through the result" do
-        expect(session).to receive(:call).with(query)
+      it "sends #query to #gateway and iterates through the result" do
+        expect(gateway).to receive(:call).with(query)
         expect(subject).to eql result
       end
     end
@@ -89,7 +89,7 @@ describe ROM::Cassandra::Dataset do
     context "without a block" do
       subject { dataset.each }
 
-      it "sends #query to #session and returns #result's enumerator" do
+      it "sends #query to #gateway and returns result's enumerator" do
         expect(subject).to be_kind_of Enumerator
         expect(subject.to_a).to eql result
       end
@@ -123,7 +123,7 @@ describe ROM::Cassandra::Dataset do
 
     it "returns the dataset with updated query" do
       expect(subject)
-        .to eql described_class.new(session, keyspace, table, updated_query)
+        .to eql described_class.new(gateway, keyspace, table, updated_query)
     end
   end # describe #method_missing
 

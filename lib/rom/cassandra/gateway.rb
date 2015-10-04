@@ -66,7 +66,7 @@ module ROM::Cassandra
     # @return [ROM::Cassandra::Dataset]
     #
     def dataset(name)
-      @datasets[name.to_sym] = Dataset.new(session, *split(name))
+      @datasets[name.to_sym] = Dataset.new(self, *split(name))
     end
 
     # Returns the registered dataset
@@ -91,12 +91,12 @@ module ROM::Cassandra
 
     # Sends CQL query to the current session
     #
-    # @param [String] value
+    # @param [String] cql
     #
     # @return [undefined]
     #
-    def call(value)
-      session.call value
+    def call(cql)
+      session.call cql
     end
 
     private

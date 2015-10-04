@@ -9,13 +9,13 @@ module ROM::Cassandra
   class Dataset
 
     include Enumerable
-    include Equalizer.new(:session, :keyspace, :table, :query)
+    include Equalizer.new(:gateway, :keyspace, :table, :query)
 
-    # @!attribute [r] session
+    # @!attribute [r] gateway
     #
-    # @return [ROM::Cassandra::Session] The open session to a Cassandra cluster
+    # @return [ROM::Cassandra::Session] The gateway to a Cassandra cluster
     #
-    attr_reader :session
+    attr_reader :gateway
 
     # @!attribute [r] keyspace
     #
@@ -37,15 +37,15 @@ module ROM::Cassandra
 
     # Initializes the dataset for given column family and command options
     #
-    # @param [ROM::Cassandra::Session] session
+    # @param [ROM::Cassandra::Gateway] gateway
     # @param [#to_sym] keyspace
     # @param [#to_sym] table
     # @param [ROM::Cassandra::Query] query
     #
     # @api private
     #
-    def initialize(session, keyspace, table, query = nil)
-      @session  = session
+    def initialize(gateway, keyspace, table, query = nil)
+      @gateway  = gateway
       @keyspace = keyspace.to_sym if keyspace
       @table    = table.to_sym if table
       @query    = query || Query.new.keyspace(keyspace).table(table)
@@ -80,13 +80,13 @@ module ROM::Cassandra
     #
     def each
       return to_enum unless block_given?
-      session.call(query).each { |item| yield(item) }
+      gateway.call(query).each { |item| yield(item) }
     end
 
     private
 
     def reload(*args)
-      self.class.new(session, *args)
+      self.class.new(gateway, *args)
     end
 
     def method_missing(name, *args)
