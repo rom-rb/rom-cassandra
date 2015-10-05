@@ -4,15 +4,14 @@ describe ROM::Cassandra::Gateway do
 
   let(:gateway) { described_class.new(uri) }
   let(:uri)     { { hosts: ["127.0.0.1"], port: 9042 } }
+  let(:connection_class) { ROM::Cassandra::Connection }
 
   describe ".new" do
     after { described_class.new("127.0.0.2", port: 9042) }
 
-    let(:session_class) { ROM::Cassandra::Session }
-
-    it "creates the session with uri" do
-      allow(session_class).to receive(:new)
-      expect(session_class).to receive(:new).with("127.0.0.2", port: 9042)
+    it "creates the connection with uri" do
+      allow(connection_class).to receive(:new)
+      expect(connection_class).to receive(:new).with("127.0.0.2", port: 9042)
     end
   end # describe .new
 
@@ -24,28 +23,28 @@ describe ROM::Cassandra::Gateway do
     end
   end # describe #options
 
-  describe "#session" do
-    subject { gateway.session }
+  describe "#connection" do
+    subject { gateway.connection }
 
-    it "is a session" do
-      expect(subject).to be_instance_of ROM::Cassandra::Session
+    it "is a connection" do
+      expect(subject).to be_instance_of connection_class
     end
 
     it "has a proper uri" do
       expect(subject.uri).to eql uri
     end
-  end # describe #session
+  end # describe #connection
 
   describe "#call" do
     subject { gateway.call(:foo) }
 
-    let(:session) { double :session, call: [:bar] }
+    let(:connection) { double :connection, call: [:bar] }
 
-    it "is forwarded to #session" do
-      allow(gateway).to receive(:session) { session }
+    it "is forwarded to #connection" do
+      allow(gateway).to receive(:connection) { connection }
 
-      expect(session).to receive(:call).with(:foo)
-      expect(subject).to eql session.call
+      expect(connection).to receive(:call).with(:foo)
+      expect(subject).to eql connection.call
     end
   end # describe #call
 

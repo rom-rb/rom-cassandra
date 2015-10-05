@@ -10,7 +10,8 @@
 
 ### Internal
 
-* Gateway isolates session from dataset (nepalez)
+* `Gateway` isolates session (connection) from dataset (nepalez)
+* `Session` is renamed to `Connection` (nepalez)
 
 [Compare v0.0.2...v0.1.0](https://github.com/rom-rb/rom-cassandra/compare/v0.0.2...v0.1.0)
 

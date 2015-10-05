@@ -13,7 +13,7 @@ module ROM::Cassandra
 
     # @!attribute [r] gateway
     #
-    # @return [ROM::Cassandra::Session] The gateway to a Cassandra cluster
+    # @return [ROM::Cassandra::Gateway] The gateway to a Cassandra cluster
     #
     attr_reader :gateway
 

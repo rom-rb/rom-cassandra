@@ -7,18 +7,18 @@ module ROM::Cassandra
   # Wraps the external driver, responsible for sending CQL requests
   # to the Cassandra cluster
   #
-  class Session
+  class Connection
 
     # The regexp, describing the format of the allowed address of the cluster
     FORMAT = /\d{1,3}(\.\d{1,3}){3}(\:\d+)?/
 
     # @!attribute [r] uri
     #
-    # @return [Hash] the settings for the session
+    # @return [Hash] the settings for the connection
     #
     attr_reader :uri
 
-    # Initializes a session to given cluster
+    # Initializes a connection to given cluster
     #
     # @param [Hash] options
     #
@@ -45,6 +45,6 @@ module ROM::Cassandra
       { hosts: [hosts], port: port.to_i }.merge hash
     end
 
-  end # class Session
+  end # class Connection
 
 end # module ROM::Cassandra

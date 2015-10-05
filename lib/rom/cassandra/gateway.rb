@@ -12,11 +12,11 @@ module ROM::Cassandra
 
     adapter :cassandra
 
-    # @!attribute [r] session
+    # @!attribute [r] connection
     #
-    # @return [ROM::Cassandra::Session] The current session
+    # @return [ROM::Cassandra::Connection] The current connection
     #
-    attr_reader :session
+    attr_reader :connection
 
     # @!attribute [r] datasets
     #
@@ -44,16 +44,16 @@ module ROM::Cassandra
     # @param [Hash] options
     #
     def initialize(*options)
-      @session  = Session.new(*options)
+      @connection  = Connection.new(*options)
       @datasets = {}
     end
 
-    # The options of the initialized session
+    # The options of the initialized connection
     #
     # @return [Hash]
     #
     def options
-      session.uri
+      connection.uri
     end
 
     # Registers a new dataset
@@ -89,14 +89,14 @@ module ROM::Cassandra
       self[name] ? true : false
     end
 
-    # Sends CQL query to the current session
+    # Sends CQL query to the current connection
     #
     # @param [String] cql
     #
     # @return [undefined]
     #
     def call(cql)
-      session.call cql
+      connection.call cql
     end
 
     private
