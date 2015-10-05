@@ -12,12 +12,6 @@ module ROM::Cassandra
 
     adapter :cassandra
 
-    # @!attribute [r] connection
-    #
-    # @return [ROM::Cassandra::Connection] The current connection
-    #
-    attr_reader :connection
-
     # @!attribute [r] datasets
     #
     # @return [Hash] The list of registered datasets
