@@ -1,5 +1,9 @@
 ## v0.1.0 to be released
 
+### Added (backward-compatible)
+
+* Thread-safety for connections (nepalez)
+
 ### Changed (backward-incompatible)
 
 * Switched to 'rom-migrator' implementation of migrations (nepalez)

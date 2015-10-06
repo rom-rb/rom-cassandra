@@ -24,17 +24,21 @@ module ROM::Cassandra
     #
     def initialize(*options)
       @uri  = extract(*options)
-      @conn = ::Cassandra.cluster(uri).connect
+      @conn  = ::Cassandra.cluster(uri).connect
+      @mutex = Mutex.new
     end
 
-    # Sends the query to the Cassandra syncronously
+    # Sends the query to the Cassandra syncronously in thread-safe manner
+    #
+    # The underlying (third party) connection is potentially stateful,
+    # that's why +@mutex+ variable locks the call.
     #
     # @param [#to_s] query
     #
     # @return [Array<Hash>]
     #
     def call(query)
-      @conn.execute(query.to_s).to_a
+      @mutex.synchronize { @conn.execute(query.to_s) }.to_a
     end
 
     private
