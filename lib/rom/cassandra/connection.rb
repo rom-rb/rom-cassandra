@@ -9,9 +9,6 @@ module ROM::Cassandra
   #
   class Connection
 
-    # The regexp, describing the format of the allowed address of the cluster
-    FORMAT = /\d{1,3}(\.\d{1,3}){3}(\:\d+)?/
-
     # @!attribute [r] uri
     #
     # @return [Hash] the settings for the connection
@@ -22,8 +19,8 @@ module ROM::Cassandra
     #
     # @param [Hash] options
     #
-    def initialize(*options)
-      @uri  = extract(*options)
+    def initialize(string = nil, hash = {})
+      @uri   = Functions.fetch(:to_uri)[string].merge hash
       @conn  = ::Cassandra.cluster(uri).connect
       @mutex = Mutex.new
     end
@@ -39,14 +36,6 @@ module ROM::Cassandra
     #
     def call(query)
       @mutex.synchronize { @conn.execute(query.to_s) }.to_a
-    end
-
-    private
-
-    def extract(uri = { hosts: ["127.0.0.1"], port: 9042 }, hash = {})
-      return uri if uri.instance_of? Hash
-      hosts, port = uri[FORMAT].split(":")
-      { hosts: [hosts], port: port.to_i }.merge hash
     end
 
   end # class Connection

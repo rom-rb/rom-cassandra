@@ -17,6 +17,7 @@ module ROM
   #
   module Cassandra
 
+    require_relative "cassandra/functions"
     require_relative "cassandra/query"
     require_relative "cassandra/connection"
     require_relative "cassandra/dataset"
