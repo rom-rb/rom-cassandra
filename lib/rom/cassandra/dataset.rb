@@ -10,6 +10,7 @@ module ROM::Cassandra
 
     include Enumerable
     include Equalizer.new(:gateway, :keyspace, :table, :query)
+    include Immutability # defines __update__
 
     # @!attribute [r] gateway
     #
@@ -44,31 +45,11 @@ module ROM::Cassandra
     #
     # @api private
     #
-    def initialize(gateway, keyspace, table, query = nil)
+    def initialize(gateway, keyspace, table)
       @gateway  = gateway
       @keyspace = keyspace.to_sym if keyspace
       @table    = table.to_sym if table
-      @query    = query || Query.new.keyspace(keyspace).table(table)
-    end
-
-    # Returns the new dataset carriyng the batch query
-    #
-    # The batch query doesn't restricted by any table or keyspace
-    #
-    # @return [ROM::Relation::Dataset]
-    #
-    def batch
-      reload nil, nil, Query.new.batch
-    end
-
-    # Returns new dataset with `select` method applied to the [#query]
-    #
-    # @param [Array, Hash, nil] args
-    #
-    # @return [ROM::Relation::Dataset]
-    #
-    def get(*args)
-      reload keyspace, table, query.select(*args)
+      @query    = Query.table(keyspace, table)
     end
 
     # Sends the [#query] to Cassandra and iterates through results
@@ -83,14 +64,34 @@ module ROM::Cassandra
       gateway.call(query).each { |item| yield(item) }
     end
 
-    private
-
-    def reload(*args)
-      self.class.new(gateway, *args)
+    # Returns the new dataset carriyng the batch query
+    #
+    # The batch query doesn't restricted by any table or keyspace,
+    # but is built from scratch.
+    #
+    # @return [ROM::Relation::Dataset]
+    #
+    def batch
+      __update__ { @query = Query.batch }
     end
 
-    def method_missing(name, *args)
-      reload keyspace, table, query.public_send(name, *args)
+    # Returns new dataset with `select` method applied to the [#query]
+    #
+    # The native query +select+ method is renamed to +get+ to not
+    # interfere with +Enumerable#select+ being included.
+    #
+    # @param [Array, Hash, nil] args
+    #
+    # @return [ROM::Relation::Dataset]
+    #
+    def get(*args)
+      __update__ { @query = query.select(*args) }
+    end
+
+    private
+
+    def method_missing(*args)
+      __update__ { @query = query.public_send(*args) }
     end
 
     def respond_to_missing?(name, *)

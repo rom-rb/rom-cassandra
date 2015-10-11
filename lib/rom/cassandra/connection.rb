@@ -1,7 +1,5 @@
 # encoding: utf-8
 
-require "cassandra"
-
 module ROM::Cassandra
 
   # Wraps the external driver, responsible for sending CQL requests
@@ -21,7 +19,7 @@ module ROM::Cassandra
     #
     def initialize(string = nil, hash = {})
       @uri   = Functions.fetch(:to_uri)[string].merge hash
-      @conn  = ::Cassandra.cluster(uri).connect
+      @conn  = ::Cassandra.cluster(uri).connect # @refactor using a factory
       @mutex = Mutex.new
     end
 

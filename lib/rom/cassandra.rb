@@ -1,5 +1,7 @@
 # encoding: utf-8
 
+require "cassandra"
+require "query_builder"
 require "rom"
 require "rom-migrator"
 
@@ -18,6 +20,8 @@ module ROM
   module Cassandra
 
     require_relative "cassandra/functions"
+    require_relative "cassandra/immutability"
+
     require_relative "cassandra/query"
     require_relative "cassandra/connection"
     require_relative "cassandra/dataset"

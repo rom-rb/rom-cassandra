@@ -1,22 +1,46 @@
 # encoding: utf-8
 
-require "query_builder"
-
 module ROM::Cassandra
 
   # Wraps the external CQL query builder
   #
   class Query
 
-    # Default CQL statements builder
-    DEFAULT_BUILDER = QueryBuilder::CQL
+    include Immutability # defines __update__
 
-    # Initializes the object carrying the lazy query
+    # Builds lazy query restricted by keyspace
     #
-    # @param [ROM::Cassandra::Query] query
+    # @param [#to_s] name
     #
-    def initialize(query = nil)
-      @query = query || DEFAULT_BUILDER
+    # @return [ROM::Cassandra::Query]
+    #
+    def self.keyspace(keyspace)
+      new.keyspace(keyspace)
+    end
+
+    # Builds lazy query restricted by keyspace and table
+    #
+    # @param [#to_s] keyspace
+    # @param [#to_s] name
+    #
+    # @return [ROM::Cassandra::Query]
+    #
+    def self.table(keyspace, name)
+      keyspace(keyspace).table(name)
+    end
+
+    # Builds lazy batch query
+    #
+    # @return [ROM::Cassandra::Query]
+    #
+    def self.batch
+      new.batch
+    end
+
+    # Initializes the object carrying the empty lazy query
+    #
+    def initialize
+      @query = QueryBuilder::CQL
     end
 
     # Builds the Query statement from the wrapped query
@@ -29,13 +53,15 @@ module ROM::Cassandra
 
     private
 
-    def respond_to_missing?(name, *)
-      @query.respond_to? name
+    # Sends all unknown methods to the current query and returns
+    # new object carrying updated query
+    #
+    def method_missing(*args)
+      __update__ { @query = @query.public_send(*args) }
     end
 
-    def method_missing(name, *args)
-      updated_query = @query.public_send(name, *args)
-      self.class.new(updated_query)
+    def respond_to_missing?(name, *)
+      @query.respond_to? name
     end
 
   end # class Query

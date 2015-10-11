@@ -2,12 +2,10 @@
 
 describe ROM::Cassandra::Dataset do
 
-  let(:dataset)  { described_class.new(gateway, keyspace, table, query) }
-
+  let(:dataset)  { described_class.new(gateway, keyspace, table) }
   let(:gateway)  { double :gateway }
   let(:keyspace) { "foo" }
   let(:table)    { "bar" }
-  let(:query)    { double :query }
 
   describe "#gateway" do
     subject { dataset.gateway }
@@ -30,24 +28,16 @@ describe ROM::Cassandra::Dataset do
   describe "#query" do
     subject { dataset.query }
 
-    context "when it is set" do
-      it { is_expected.to eql query }
-    end
-
-    context "when it isn't set" do
-      let(:dataset)  { described_class.new(gateway, keyspace, table) }
-
-      it "returns the context of table" do
-        expect(subject.select.to_s).to eql "SELECT * FROM foo.bar;"
-      end
+    it "returns a lazy query restricted by #table" do
+      expect(subject.select.to_s).to eql "SELECT * FROM foo.bar;"
     end
   end # describe #query
 
   describe "#get" do
     subject { dataset.get(:bar, :baz) }
 
-    let(:select) { double :select }
-    before { allow(query).to receive(:select).and_return(select) }
+    let(:query) { double :query, select: double }
+    before { dataset.send :instance_variable_set, :@query, query }
 
     it "forwards calls to the #query" do
       expect(query).to receive(:select).with(:bar, :baz)
@@ -55,21 +45,19 @@ describe ROM::Cassandra::Dataset do
     end
 
     it "returns the dataset with updated query" do
-      expect(subject)
-        .to eql described_class.new(gateway, keyspace, table, select)
+      expect(subject).to be_kind_of described_class
+      expect(subject.query).to eql query.select
     end
   end # describe #get
 
   describe "#batch" do
     subject { dataset.batch }
 
-    let(:batch)   { double :batch }
-    let(:builder) { double :builder, batch: batch }
-    before { allow(ROM::Cassandra::Query).to receive(:new) { builder } }
+    let(:batch) { double :batch }
+    before { allow(ROM::Cassandra::Query).to receive(:batch) { batch } }
 
     it "returns the dataset with updated query" do
-      expect(subject)
-        .to eql described_class.new(gateway, nil, nil, batch)
+      expect(subject.query).to eql batch
     end
   end # describe #batch
 
@@ -81,7 +69,7 @@ describe ROM::Cassandra::Dataset do
       subject { dataset.map { |item| item } }
 
       it "sends #query to #gateway and iterates through the result" do
-        expect(gateway).to receive(:call).with(query)
+        expect(gateway).to receive(:call).with(dataset.query)
         expect(subject).to eql result
       end
     end
@@ -100,7 +88,7 @@ describe ROM::Cassandra::Dataset do
     subject { dataset.respond_to? :foo }
 
     context "method defined for #query" do
-      before { allow(query).to receive(:foo) }
+      before { allow(dataset.query).to receive(:foo) }
 
       it { is_expected.to eql true }
     end
@@ -114,16 +102,15 @@ describe ROM::Cassandra::Dataset do
     subject { dataset.foo(:bar) }
 
     let(:updated_query) { double :updated_query }
-    before { allow(query).to receive(:foo) { updated_query } }
+    before { allow(dataset.query).to receive(:foo) { updated_query } }
 
     it "forwards calls to the #query" do
-      expect(query).to receive(:foo).with(:bar)
+      expect(dataset.query).to receive(:foo).with(:bar)
       subject
     end
 
     it "returns the dataset with updated query" do
-      expect(subject)
-        .to eql described_class.new(gateway, keyspace, table, updated_query)
+      expect(subject.query).to eql updated_query
     end
   end # describe #method_missing
 

@@ -38,7 +38,7 @@ module ROM::Cassandra
     # @param [Hash] options
     #
     def initialize(*options)
-      @connection  = Connection.new(*options)
+      @connection = Connection.new(*options)
       @datasets = {}
     end
 

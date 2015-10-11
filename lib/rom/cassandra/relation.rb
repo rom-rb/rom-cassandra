@@ -19,6 +19,8 @@ module ROM::Cassandra
   #
   class Relation < ROM::Relation
 
+    include Immutability # defines __update__
+
     adapter :cassandra
     option  :source
 
@@ -32,9 +34,8 @@ module ROM::Cassandra
     # @private
     def initialize(*)
       super
-      return if (@source = options[:source])
-      @source  = dataset
-      @dataset = dataset.get
+      @source  = dataset     # stores the source dataset
+      @dataset = dataset.get # allows sending get requests only
     end
 
     # Returns the relation whose source is restricted by `#insert` lazy query
@@ -42,7 +43,7 @@ module ROM::Cassandra
     # @return [ROM::Cassandra::Relation]
     #
     def insert_query
-      reload source.insert
+      __update__ { @dataset = source.insert }
     end
 
     # Returns the relation whose source is restricted by `#update` lazy query
@@ -50,7 +51,7 @@ module ROM::Cassandra
     # @return [ROM::Cassandra::Relation]
     #
     def update_query
-      reload source.update
+      __update__ { @dataset = source.update }
     end
 
     # Returns the relation whose source is restricted by `#delete` lazy query
@@ -58,7 +59,7 @@ module ROM::Cassandra
     # @return [ROM::Cassandra::Relation]
     #
     def delete_query
-      reload source.delete
+      __update__ { @dataset = source.delete }
     end
 
     # Returns the relation whose source is restricted by `#delete` lazy query
@@ -66,21 +67,20 @@ module ROM::Cassandra
     # @return [ROM::Cassandra::Relation]
     #
     def batch_query
-      reload source.batch
+      __update__ { @dataset = source.batch }
     end
 
     private
 
+    # Sends all other methods to dataset, restricted by #get queries,
+    # and returns new relation carrying updated dataset
+    #
+    def method_missing(*args)
+      __update__ { @dataset = dataset.public_send(*args) }
+    end
+
     def respond_to_missing?(name, *)
       dataset.respond_to? name
-    end
-
-    def method_missing(name, *args)
-      reload dataset.public_send(name, *args)
-    end
-
-    def reload(dataset)
-      __new__ dataset, source: source
     end
 
   end # class Relation

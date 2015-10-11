@@ -8,6 +8,8 @@ module ROM::Cassandra
   #
   module Commands
 
+    include Immutability
+
     # @private
     def self.included(klass)
       klass.__send__ :adapter, :cassandra
@@ -18,7 +20,7 @@ module ROM::Cassandra
     #
     def initialize(*)
       super
-      @relation = relation.public_send(restriction) if options.fetch(:initial)
+      @relation = relation.public_send(restriction)
     end
 
     # Implements the execute method of the `ROM::Command` abstract class
@@ -34,9 +36,11 @@ module ROM::Cassandra
 
     private
 
-    def method_missing(name, *args)
-      updated_relation = relation.public_send(name, *args)
-      self.class.new updated_relation, initial: nil
+    # Sends unknown methods to the <restricted> relation and returns
+    # a new object, carrying updated relation
+    #
+    def method_missing(*args)
+      __update__ { @relation = relation.public_send(*args) }
     end
 
     def respond_to_missing?(name, *)
