@@ -24,22 +24,22 @@ describe "migrator" do
 
     expect { check "SELECT * FROM logs.users;" }.not_to raise_error
     expect { check "SELECT * FROM logs.logs" }.to raise_error StandardError
-    expect(stdout.string).to     include "Migration number '20150825142003' has been applied"
-    expect(stdout.string).not_to include "Migration number '20150825142024' has been applied"
+    expect(stdout.string).to     include "The migration number '20150825142003' has been applied"
+    expect(stdout.string).not_to include "The migration number '20150825142024' has been applied"
 
     migrator.apply logger: logger, folders: [path]
 
     expect { check "SELECT * FROM logs.users;" }.not_to raise_error
     expect { check "SELECT * FROM logs.logs" }.not_to raise_error
-    expect(stdout.string).to     include "Migration number '20150825142024' has been applied"
-    expect(stdout.string).not_to include "rolled back"
+    expect(stdout.string).to     include "The migration number '20150825142024' has been applied"
+    expect(stdout.string).not_to include "reversed"
 
-    migrator.rollback logger: logger, folders: [path]
+    migrator.reverse logger: logger, folders: [path]
 
     expect { check "SELECT * FROM logs.users;" }.to raise_error StandardError
     expect { check "SELECT * FROM logs.logs" }.to raise_error StandardError
-    expect(stdout.string).to include "Migration number '20150825142024' has been rolled back"
-    expect(stdout.string).to include "Migration number '20150825142003' has been rolled back"
+    expect(stdout.string).to include "The migration number '20150825142024' has been reversed"
+    expect(stdout.string).to include "The migration number '20150825142003' has been reversed"
   end
 
   after { check "DROP KEYSPACE IF EXISTS rom;" }

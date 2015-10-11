@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 class CreateLogs < ROM::Migrator::Migration
-  def up
+  up do
     call keyspace(:logs)
       .table(:logs)
       .create
@@ -11,7 +11,7 @@ class CreateLogs < ROM::Migrator::Migration
       .if_not_exists
   end
 
-  def down
+  down do
     call "DROP TABLE IF EXISTS logs.logs;"
   end
 end # class CreateUsers

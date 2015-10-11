@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 class CreateUsers < ROM::Migrator::Migration
-  def up
+  up do
     replication = { class: :SimpleStrategy, replication_factor: 1 }
 
     call keyspace(:logs)
@@ -18,7 +18,7 @@ class CreateUsers < ROM::Migrator::Migration
       .primary_key(:id)
   end
 
-  def down
+  down do
     call keyspace(:logs).drop.if_exists
   end
 end # class CreateUsers
