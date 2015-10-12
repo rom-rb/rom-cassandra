@@ -10,7 +10,8 @@ describe "migrator" do
   let(:stdout)   { StringIO.new }
   let(:logger)   { Logger.new stdout }
   let(:path)     { File.expand_path("../migrate", __FILE__) }
-  let(:migrator) { ROM.env.gateways[:default].migrator }
+  let(:gateway)  { ROM.env.gateways[:default] }
+  let(:migrator) { gateway.migrator(logger: logger, path: path) }
 
   it "works" do
     ROM.setup(:cassandra, "127.0.0.1:9042")
@@ -20,21 +21,21 @@ describe "migrator" do
     expect { check "SELECT * FROM logs.logs" }.to raise_error StandardError
     expect(stdout.string).to be_empty
 
-    migrator.apply logger: logger, folders: [path], target: "20150825142003"
+    migrator.apply target: "20150825142003"
 
     expect { check "SELECT * FROM logs.users;" }.not_to raise_error
     expect { check "SELECT * FROM logs.logs" }.to raise_error StandardError
     expect(stdout.string).to     include "The migration number '20150825142003' has been applied"
     expect(stdout.string).not_to include "The migration number '20150825142024' has been applied"
 
-    migrator.apply logger: logger, folders: [path]
+    migrator.apply
 
     expect { check "SELECT * FROM logs.users;" }.not_to raise_error
     expect { check "SELECT * FROM logs.logs" }.not_to raise_error
     expect(stdout.string).to     include "The migration number '20150825142024' has been applied"
     expect(stdout.string).not_to include "reversed"
 
-    migrator.reverse logger: logger, folders: [path]
+    migrator.reverse
 
     expect { check "SELECT * FROM logs.users;" }.to raise_error StandardError
     expect { check "SELECT * FROM logs.logs" }.to raise_error StandardError
