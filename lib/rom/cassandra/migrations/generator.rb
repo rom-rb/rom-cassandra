@@ -1,5 +1,7 @@
 # encoding: utf-8
 
+require 'erb'
+
 module ROM::Cassandra
 
   module Migrations
