@@ -1,3 +1,11 @@
+## v0.0.3 to be released
+
+### Bugs Fixed
+
+* undefined ERB in a migration (tank-bohr)
+
+[Compare v0.0.2...HEAD](https://github.com/rom-rb/rom-cassandra/compare/v0.0.2...HEAD)
+
 ## v0.0.2 2015-09-08
 
 ### Changed
